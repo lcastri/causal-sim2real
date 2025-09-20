@@ -12,5 +12,9 @@ echo "This will use 'Dockerfile' and 'docker-compose.yml' in the current directo
 docker-compose build
 
 echo " "
+echo "Removing old images..."
+docker image prune -f
+
+echo " "
 echo -e "${GREEN}Docker environment built successfully!${NC}"
 echo -e "${YELLOW}You can now run './docrun.sh' to start the container.${NC}"

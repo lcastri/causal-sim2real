@@ -4,7 +4,9 @@ FROM osrf/ros:noetic-desktop-full
 ARG UID=1000
 ARG GID=1000
 
-# Install essential packages
+############################################################################## 
+# Essential packages
+##############################################################################
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y --no-install-recommends \
     locales \
@@ -53,16 +55,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libfl2 \
     && rm -rf /var/lib/apt/lists/*
 
-
-COPY HRISim_docker/src/HRISim/robot/robot_twist_mux/modified_scripts/twist_mux.launch /opt/ros/noetic/share/twist_mux/launch/
-
 RUN rosdep init || true
 
 # Create a new group and user with the provided IDs
 RUN groupadd -g $GID hrisim && \
     useradd -m -s /bin/bash -u $UID -g $GID hrisim && \
     echo "hrisim ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-
 
 USER hrisim
 WORKDIR /home/hrisim
@@ -71,23 +69,25 @@ WORKDIR /home/hrisim
 RUN pip install pyAgrum --user
 RUN pip install pandas --user
 RUN pip install shapely --user
-RUN pip install networkx --user
+RUN pip install networkx==3.1 --user
 RUN pip install tmule --user
 
-############################################################################## TIAGo
+############################################################################## 
+# TIAGo
+##############################################################################
 # Create a new workspace
 RUN mkdir -p /home/hrisim/tiago_ws/src
 WORKDIR /home/hrisim/tiago_ws
 
 # Download tiago_public-noetic.rosinstall and clone required repositories
 RUN wget https://raw.githubusercontent.com/pal-robotics/tiago_tutorials/noetic-devel/tiago_public-noetic.rosinstall && \
-    rosinstall src /opt/ros/noetic tiago_public-noetic.rosinstall
+rosinstall src /opt/ros/noetic tiago_public-noetic.rosinstall
 
 # Run user-level rosdep commands and install dependencies
 RUN rosdep update --include-eol-distros && \
-    sudo apt-get update && \
-    rosdep install -y --from-paths src --ignore-src --rosdistro noetic --skip-keys \
-    "urdf_test omni_drive_controller orocos_kdl pal_filters libgazebo9-dev pal_usb_utils speed_limit_node camera_calibration_files pal_moveit_plugins pal_startup_msgs pal_local_joint_control pal_pcl_points_throttle_and_filter current_limit_controller hokuyo_node dynamixel_cpp pal_moveit_capabilities pal_pcl dynamic_footprint gravity_compensation_controller pal-orbbec-openni2 pal_loc_measure pal_map_manager ydlidar_ros_driver"
+sudo apt-get update && \
+rosdep install -y --from-paths src --ignore-src --rosdistro noetic --skip-keys \
+"urdf_test omni_drive_controller orocos_kdl pal_filters libgazebo9-dev pal_usb_utils speed_limit_node camera_calibration_files pal_moveit_plugins pal_startup_msgs pal_local_joint_control pal_pcl_points_throttle_and_filter current_limit_controller hokuyo_node dynamixel_cpp pal_moveit_capabilities pal_pcl dynamic_footprint gravity_compensation_controller pal-orbbec-openni2 pal_loc_measure pal_map_manager ydlidar_ros_driver"
 
 # COPY workspace files with correct destination and ownership
 COPY HRISim_docker/src/HRISim/robot/tiago_controller_conf_package.xml /home/hrisim/tiago_ws/src/tiago_robot/tiago_controller_configuration/package.xml
@@ -96,24 +96,26 @@ COPY HRISim_docker/src/HRISim/hrisim_gazebo/modified_scripts/local_planner.yaml 
 # Build the workspace
 RUN /bin/bash -c 'source /opt/ros/noetic/setup.bash; cd /home/hrisim/tiago_ws; catkin build'
 
-############################################################################## PetriNetPlans
+# ############################################################################## 
+# PetriNetPlans
+# ##############################################################################
 # Create a new workspace
 RUN mkdir -p /home/hrisim/ros_ws/src
 WORKDIR /home/hrisim/ros_ws
 
-# Clone and install PetriNetPlans
 RUN cd /home/hrisim/ros_ws
 RUN git clone -b noetic_devel https://github.com/francescodelduchetto/PetriNetPlans.git
-RUN mkdir -p /home/hrisim/ros_ws/PetriNetPlans/PNP/build && cd /home/hrisim/ros_ws/PetriNetPlans/PNP/build && cmake .. && \
-sudo make install
+RUN mkdir -p /home/hrisim/ros_ws/PetriNetPlans/PNP/build && cd /home/hrisim/ros_ws/PetriNetPlans/PNP/build && cmake .. && sudo make install
 
-RUN cd /home/hrisim/ros_ws/src && \
-ln -s /home/hrisim/ros_ws/PetriNetPlans/PNPros/ROS_bridge/pnp_ros . && \
-ln -s /home/hrisim/ros_ws/PetriNetPlans/PNPros/ROS_bridge/pnp_msgs .
+RUN cd ~/ros_ws/src && \
+ln -s ~/ros_ws/PetriNetPlans/PNPros/ROS_bridge/pnp_ros . && \
+ln -s ~/ros_ws/PetriNetPlans/PNPros/ROS_bridge/pnp_msgs .
 RUN echo "export PNP_HOME=/home/hrisim/ros_ws/src/pnp_ros/" >> ~/.bashrc
 COPY HRISim_docker/src/HRISim/pnp_ros/main.cpp /home/hrisim/ros_ws/PetriNetPlans/PNPros/ROS_bridge/pnp_ros/src/main.cpp
 
-############################################################################## Final
+# ############################################################################## 
+# Shared Folders
+# ##############################################################################
 # Create a shared folder with the host machine
 RUN mkdir -p /home/hrisim/shared
 RUN mkdir -p /home/hrisim/.pal/tiago_maps/configurations/
