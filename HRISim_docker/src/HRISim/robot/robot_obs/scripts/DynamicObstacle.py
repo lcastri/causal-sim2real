@@ -168,4 +168,6 @@ class DynamicObstacleSpawner:
 
 if __name__ == "__main__":
     obstacle_manager = DynamicObstacleSpawner()
+    rospy.logwarn("Dynamic Obstacle started!")
+
     rospy.spin()

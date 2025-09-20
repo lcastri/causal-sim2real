@@ -173,5 +173,6 @@ if __name__ == '__main__':
         G.remove_node(constants.WP.CHARGING_STATION.value)
         
     pedsimBridge = PedsimBridge()
+    rospy.logwarn("Pedsim Bridge started!")
                 
     rospy.spin()

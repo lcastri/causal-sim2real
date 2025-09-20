@@ -11,18 +11,17 @@ class ParameterTimeoutError(Exception):
     pass
 
 
-def wait_for_param(param_name, timeout=60):
-    start_time = time.time()
-    while not rospy.has_param(param_name):
-        if time.time() - start_time > timeout:
-            rospy.logerr(f"Parameter {param_name} NOT found!")
-            raise ParameterTimeoutError(f"Timeout exceeded while waiting for parameter: {param_name}")
+def wait_for_param(param_name):
+    rospy.logwarn(f"Waiting rosparam {param_name} to be available...")
+    while not rospy.has_param(param_name): rospy.sleep(0.1)
+    rospy.loginfo(f"rosparam {param_name} found!")
     return rospy.get_param(param_name)
 
 
 def wait_for_service(service_name):
     rospy.logwarn(f"Waiting rosservice {service_name} to be ready...")
     rospy.wait_for_service(service_name)
+    rospy.loginfo(f"rosservice {service_name} found!")
 
 
 def getPose(p: Pose):

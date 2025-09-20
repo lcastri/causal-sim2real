@@ -138,9 +138,6 @@ class ClearingDistanceNode:
         closest_pixel_x = obstacle_pixels[1][closest_idx]
         closest_pixel_y = obstacle_pixels[0][closest_idx]
 
-        # Convert back to world coordinates
-        # rospy.logerr(f"pixelX: {closest_pixel_x} -- pixelY: {closest_pixel_y}")
-
         closest_obstacle_x = closest_pixel_x * self.map_resolution + self.map_origin[0]
         closest_obstacle_y = (self.map_origin[1] + (self.map_data.shape[0] - closest_pixel_y) * self.map_resolution)
 
@@ -180,6 +177,9 @@ if __name__ == "__main__":
     rate = rospy.Rate(10)
     ROBOT_RADIUS = 0.27
     node = ClearingDistanceNode()
+    
+    rospy.logwarn("Clearance Distance Node started!")
+    
     while not rospy.is_shutdown():
         node.calculate_clearance()
         rate.sleep()

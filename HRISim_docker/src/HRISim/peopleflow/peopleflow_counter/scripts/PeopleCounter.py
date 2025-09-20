@@ -59,4 +59,7 @@ if __name__ == '__main__':
 
     PC = PeopleCounter()
     
+    rospy.logwarn("Pedsim Counter started!")
+
+    
     rospy.spin()

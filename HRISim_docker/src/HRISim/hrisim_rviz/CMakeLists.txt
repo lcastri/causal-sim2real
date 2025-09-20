@@ -16,6 +16,8 @@ find_package(catkin REQUIRED COMPONENTS
   visualization_msgs
   pedsim_msgs
   rospy
+  robot_msgs
+  peopleflow_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -39,7 +41,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES gzb_vel_plugin
-  CATKIN_DEPENDS geometry_msgs visualization_msgs pedsim_msgs
+  CATKIN_DEPENDS geometry_msgs visualization_msgs pedsim_msgs rospy robot_msgs peopleflow_msgs
 #  DEPENDS system_lib
 )
 

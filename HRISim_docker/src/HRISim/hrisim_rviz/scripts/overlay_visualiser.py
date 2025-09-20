@@ -6,7 +6,14 @@ from jsk_rviz_plugins.msg import OverlayText
 from std_msgs.msg import ColorRGBA, Bool, Int32
 from robot_msgs.msg import BatteryStatus, TasksInfo
 from nav_msgs.msg import Odometry
+from peopleflow_msgs.msg import Time as pT
 
+
+def cb_time(t: pT):
+    global TIME
+    TIME = f"{str(t.time_of_the_day.data).capitalize()}: {str(t.hhmmss.data)}"
+    
+    
 def cb_battery(msg):
     global BATTERY_LEVEL, BATTERY_ISCHARGING
     BATTERY_LEVEL = msg.level.data        
@@ -40,16 +47,18 @@ def create_overlay_text():
     text_main.width = 400  # Width of the overlay
     text_main.height = 115  # Height of the overlay
     text_main.left = 10  # X position (left offset)
-    text_main.top = 35  # Y position (top offset)
+    text_main.top = 10  # Y position (top offset)
     text_main.text_size = 13  # Font size
     text_main.line_width = 2
+    time_info = f"{TIME}" if TIME is not None else 'none'
     battery_info = f"{BATTERY_LEVEL:.2f}%" if BATTERY_LEVEL is not None else 'none'
     vel_info = f"{ROBOT_VEL:.2f}%" if ROBOT_VEL is not None else 'none'
+    time_str = time_info
     intro_str = "Info:"
     battery_str = f"- Battery: {battery_info}"
     velocity_str = f"- Velocity: {vel_info} m/s"
     collision_str = f"- Collisions: {COLLISION}"
-    overlay_str = '\n'.join([intro_str, battery_str, velocity_str, collision_str])
+    overlay_str = '\n'.join([time_str, intro_str, battery_str, velocity_str, collision_str])
     text_main.text = overlay_str
     text_main.font = "DejaVu Sans Mono"
     text_main.fg_color = ColorRGBA(1.0, 1.0, 1.0, 1.0)  # RGBA (White)
@@ -89,9 +98,10 @@ def create_overlay_text():
 
 
 if __name__ == '__main__':
-    rospy.init_node('robot_displayinfo')
+    rospy.init_node('overlay_visualiser')
     rate = rospy.Rate(1)  # 1 Hz
     
+    TIME = None
     BATTERY_LEVEL = None
     COLLISION = 0
     BATTERY_ISCHARGING = False
@@ -104,7 +114,8 @@ if __name__ == '__main__':
     rospy.Subscriber('/hrisim/robot_tasks_info', TasksInfo, cb_robot_tasks)
     rospy.Subscriber('/mobile_base_controller/odom', Odometry, cb_vel)
     rospy.Subscriber("/hrisim/robot_human_collision", Int32, cb_robot_human_collision)
-
+    rospy.Subscriber("/peopleflow/time", pT, cb_time)
+    
     text_pub = rospy.Publisher('/hrisim/robot/info/main', OverlayText, queue_size=10)
     task_pub = rospy.Publisher('/hrisim/robot/info/tasks', OverlayText, queue_size=10)
     obstacle_pub = rospy.Publisher('/hrisim/robot/info/obstacle', OverlayText, queue_size=10)
