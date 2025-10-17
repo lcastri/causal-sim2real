@@ -7,9 +7,9 @@ YELLOW='\033[0;33m'
 NC='\033[0m'
 
 echo " "
-echo "Building the Docker environment using docker-compose..."
+echo "Building the Docker environment using docker compose..."
 echo "This will use 'Dockerfile' and 'docker-compose.yml' in the current directory."
-docker-compose build
+docker compose build
 
 echo " "
 echo "Removing old images..."

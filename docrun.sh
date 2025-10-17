@@ -8,7 +8,7 @@ NC='\033[0m'
 
 echo " "
 echo "Starting the container in the background..."
-docker-compose up -d
+docker compose up -d
 
 echo " "
 echo -e "${GREEN}Container is running.${NC}"

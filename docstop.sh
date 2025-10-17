@@ -8,7 +8,7 @@ NC='\033[0m'
 
 echo " "
 echo "Stopping and removing the container..."
-docker-compose down
+docker compose down
 
 echo " "
 echo -e "${GREEN}Environment has been stopped.${NC}"
