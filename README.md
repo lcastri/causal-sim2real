@@ -4,9 +4,25 @@ robot trajectories influenced by contextual factors such as time, environment la
 
 <div align="center">
 <p float="left">
-    <img src="https://github.com/lcastri/PeopleFlow/blob/dev/media/peopleflow.gif">
+    <img src="https://github.com/lcastri/PeopleFlow/blob/main/media/peopleflow.gif">
 </p>
 </div>
+
+## Citation
+
+If you find this repo useful for your research, please consider citing the following paper:
+
+```bibtex
+@misc{castri2025causalityenhanceddecision,
+      title={Causality-enhanced Decision-Making for Autonomous Mobile Robots in Dynamic Environments}, 
+      author={Luca Castri and Gloria Beraldo and Nicola Bellotto},
+      year={2025},
+      eprint={2504.11901},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2504.11901}, 
+}
+```
 
 ## Features
 * Customisable world
