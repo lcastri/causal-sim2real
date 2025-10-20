@@ -1,7 +1,8 @@
+import math
 import os
+import pickle
 import random
 import sys
-import xml.etree.ElementTree as ET
 import rospy
 try:
     sys.path.insert(0, os.environ["PNP_HOME"] + '/scripts')
@@ -12,135 +13,181 @@ except:
 import pnp_cmd_ros
 from pnp_cmd_ros import *
 from robot_msgs.msg import BatteryStatus
+from std_msgs.msg import String
 from move_base_msgs.msg import MoveBaseAction
 import actionlib
 import hrisim_util.ros_utils as ros_utils
+import hrisim_util.constants as constants
+import networkx as nx
+from robot_srvs.srv import NewTask, FinishTask, VisualisePath
+from nav_msgs.msg import Odometry
 
-DP = None
-SHELFS_NAME = ["shelf1", "shelf2", "shelf3", "shelf4", "shelf5", "shelf6"]
-KITCHEN_NAME = ["table2", "table3", "table4", "table5", "table6", "kitchen1", "kitchen2", "kitchen3"]
-SHELFS = {}
-KITCHEN = {}
-CHARGING_STATION = None
-CLEANING_PATH = [
-    (-18.22, 7.76), (-8.33, 7.90), (-8.03, -8.26), (-17.90, -8.16), (-17.89, -4.56), (-9.41, -4.44), (-9.36, -1.69), (-17.9, -1.5), (-17.9, 1.6), (-9.21, 1.6), (-9.21, 4.5), (-17.9, 4.5), (-18.22, 7.76),
-    (-6.33, 8.73), (-6.33, -8.73), (-2.5, -8.73), (-2.5, 7.84), (9, 7.84), (9, 9), (-6.33, 8.73),
-    (-0.83, 6.21), (1.3, 6.21), (1.3, 4.8), (-2.7, 4.8),
-    (-0.92, 3.3), (1.3, 3.3), (1.3, 1.7), (-2.7, 1.7),
-    (-0.875, 0.18), (1.18, 0.18), (1.18, -1.21), (-2.7, -1.21),
-    (-0.92, -2.87), (1.35, -2.87), (1.35, -4.33), (-2.7, -4.33),
-    (-2.3, -6.57), (3.3, -6.57), (3, 6), (9, 6), (5, 3), (9, 3), (9, 1), (5, 1), (5, -1.5), (9, -1.5), (9, -3.5), (5, -3.5), (5, -6.5), (9, -6.5), (9, -9), (-2.3, -9), (-2.3, -6.57)
-    ]
 
-def readScenario():
-    # Load and parse the XML file
-    tree = ET.parse(SCENARIO + '.xml')
-    root = tree.getroot()
+WORKING_TOP_TARGETS = [constants.WP.TARGET_1.value, constants.WP.TARGET_2.value, constants.WP.TARGET_3.value]
+WORKING_BOTTOM_TARGETS = [constants.WP.TARGET_4.value, constants.WP.TARGET_5.value, constants.WP.TARGET_6.value]
+LUNCH_TARGETS = [constants.WP.ENTRANCE.value, constants.WP.TARGET_7.value]
+
+
+def send_goal(p, next_dest, nextnext_dest=None):
+    global OBS_SPAWNED_TIME
+    pos = nx.get_node_attributes(G, 'pos')
+    x, y = pos[next_dest]
+    if nextnext_dest is not None:
+        x2, y2 = pos[nextnext_dest]
+        angle = math.atan2(y2-y, x2-x)
+        inputs = [x, y, angle, TIME_THRESHOLD]
+    else:
+        inputs = [x, y, 0, TIME_THRESHOLD]
+    p.exec_action('goto', "_".join([str(input) for input in inputs]))
+    
+    
+def heuristic(a, b):
+    pos = nx.get_node_attributes(G, 'pos')
+    (x1, y1) = pos[a]
+    (x2, y2) = pos[b]
+    return ((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5
+
+
+def get_next_goal():
+    global ROBOT_CLOSEST_WP, CLEANING_PATH
+    
+    if not rospy.get_param('/robot_battery/is_charging') and not rospy.get_param('/hrisim/robot_busy'):     
+        if rospy.get_param('/peopleflow/timeday') in [constants.TOD.H1.value, constants.TOD.H2.value, constants.TOD.H3.value, 
+                                                      constants.TOD.H4.value, constants.TOD.H5.value, constants.TOD.H7.value, 
+                                                      constants.TOD.H8.value, constants.TOD.H9.value, constants.TOD.H10.value]:
+            if ROBOT_CLOSEST_WP in WORKING_TOP_TARGETS:
+                return random.choice(WORKING_BOTTOM_TARGETS), constants.Task.DELIVERY, True
+            else:
+                return random.choice(WORKING_TOP_TARGETS), constants.Task.DELIVERY, True
+                    
+        elif rospy.get_param('/peopleflow/timeday') in [constants.TOD.H6.value]:
+            if ROBOT_CLOSEST_WP == constants.WP.ENTRANCE.value:
+                return constants.WP.TARGET_7.value, constants.Task.DELIVERY, True
+            else:
+                return constants.WP.ENTRANCE.value, constants.Task.DELIVERY, True
+            
+        elif rospy.get_param('/peopleflow/timeday') in [constants.TOD.OFF.value]:
+            if len(CLEANING_PATH) > 0:
+                rospy.logwarn("It's off time, going to clean the shop.")
+                return CLEANING_PATH.pop(0), constants.Task.CLEANING, True
+            else:
+                rospy.logwarn("No cleaning tasks left, shutting down the planning.")
+                return None, None, False
         
-    # Parse schedule
-    for wp in root.findall('waypoint'):
-        if wp.get('id') in SHELFS_NAME:
-            SHELFS[wp.get('id')] = [wp.get('x'), wp.get('y'), 0]
-        elif wp.get('id') in KITCHEN_NAME:
-            KITCHEN[wp.get('id')] = [wp.get('x'), wp.get('y'), 0]
-        elif wp.get('id') == 'delivery_point':
-            DP = [wp.get('x'), wp.get('y'), 0]
-        elif wp.get('id') == 'charging_station':
-            CHARGING_STATION = [wp.get('x'), wp.get('y'), 0]
-    return SHELFS, DP, KITCHEN, CHARGING_STATION
-
-
-def ac_goto(p, dest):
-    p.action_cmd('goto', "_".join([str(coord) for coord in dest]), 'start')
-    while not rospy.get_param('/hri/robot_busy'): 
-        rospy.sleep(0.1)
-
-
+        
 def Plan(p):
     while not ros_utils.wait_for_param("/pnp_ros/ready"):
         rospy.sleep(0.1)
         
-    global wp
+    global NEXT_GOAL, QUEUE, GO_TO_CHARGER
+    
+    ros_utils.wait_for_service('/hrisim/new_task')
+    ros_utils.wait_for_service('/hrisim/finish_task')
+    ros_utils.wait_for_service('/hrisim/shutdown')
+    ros_utils.wait_for_service('/graph/path/show')
+
+    new_task_service = rospy.ServiceProxy('/hrisim/new_task', NewTask)
+    finish_task_service = rospy.ServiceProxy('/hrisim/finish_task', FinishTask)
+    graph_path_show = rospy.ServiceProxy('/graph/path/show', VisualisePath)
+    
+    
     ros_utils.wait_for_param("/peopleflow/timeday")
-    rospy.set_param('/hri/robot_busy', False)
-    gotoDP = False
-    rospy.set_param("/peopleflow/robot_plan_on", True)
-    while True:
-        
-        if not rospy.get_param('/robot_battery/is_charging') and BATTERY_LEVEL <= 20:
-            rospy.logwarn("Cancelling all goals..")
-            client = actionlib.SimpleActionClient('/move_base', MoveBaseAction)
-            client.wait_for_server()
-            client.cancel_all_goals()
-            p.action_cmd('goto', "", 'interrupt')
-                
-            while rospy.get_param('/hri/robot_busy'): 
-                rospy.sleep(0.1)
-                                
-            p.exec_action('goto', '_'.join([str(coord) for coord in CHARGING_STATION]))
-                
-            while rospy.get_param('/hri/robot_busy'): 
-                rospy.sleep(0.1)
-                
+    rospy.set_param('/hrisim/robot_busy', False)
+    PLAN_ON = True
+    rospy.set_param("/peopleflow/robot_plan_on", PLAN_ON)
+    
+    while PLAN_ON:
+        rospy.logerr("Planning..")
+        if GO_TO_CHARGER:
+            NEXT_GOAL = constants.WP.CHARGING_STATION
+            PLAN_ON = True
+            QUEUE = nx.astar_path(G, ROBOT_CLOSEST_WP, NEXT_GOAL.value, heuristic=heuristic, weight='weight')
+            while QUEUE:
+                current_wp = QUEUE.pop(0)
+                next_wp = QUEUE[0] if QUEUE else None
+                send_goal(p, current_wp, next_wp)
+            GO_TO_CHARGER = False
+            TASK = constants.Task.CHARGING
+            finish_task_service(task_id, constants.TaskResult.FAILURE.value)  # 1 for success
             rospy.set_param('/robot_battery/is_charging', True)
-            TASK = "charging"
             rospy.logwarn("Battery charging..")
             
-        elif BATTERY_LEVEL == 100 and rospy.get_param('/robot_battery/is_charging'):
-            rospy.logwarn("Battery fully charged..")
-            rospy.set_param('/robot_battery/is_charging', False)
-        
-        elif not rospy.get_param('/robot_battery/is_charging') and not rospy.get_param('/hri/robot_busy'):                        
-            p.action_cmd('goto', "", 'interrupt')               
-            # rospy.sleep(random.randint(10, 30))
-                
-            if rospy.get_param('/peopleflow/timeday') in ['starting', 'morning', 'lunch']:
-                # Pick and Place
-                TASK = "delivery"
-                if gotoDP:
-                    DEST = DP
-                    gotoDP = False
-                        
-                else:
-                    gotoDP = True
-                    DEST = SHELFS[random.choice(SHELFS_NAME)]
-                    
-            elif rospy.get_param('/peopleflow/timeday') in ['afternoon', 'quitting']:
-                # Inventory
-                TASK = "inventory"
-                DEST = SHELFS[random.choice(SHELFS_NAME)]
-                    
-            elif rospy.get_param('/peopleflow/timeday') in ['off']:
-                # Cleaner
-                TASK = "cleaning"
-                if wp + 1 < len(CLEANING_PATH):
-                    wp = wp + 1
-                else:
-                    wp = 0
-                    break
-                DEST = (CLEANING_PATH[wp][0], CLEANING_PATH[wp][1], 0)
-            ac_goto(p, DEST)
-        rospy.set_param('/hrisim/robot_task', TASK)
-        
-    rospy.set_param("/peopleflow/robot_plan_on", False) # triggers the ROS shutdown in ScenarioManager.py
+        elif not rospy.get_param('/robot_battery/is_charging') and not GO_TO_CHARGER and len(QUEUE) == 0:
+            NEXT_GOAL, TASK, PLAN_ON = get_next_goal()
+            if NEXT_GOAL is None: continue
+            QUEUE = nx.astar_path(G, ROBOT_CLOSEST_WP, NEXT_GOAL, heuristic=heuristic, weight='weight')
 
-                        
-                        
+            rospy.logwarn(f"{QUEUE}")
+            graph_path_show(','.join(QUEUE))
+
+            task_id = new_task_service(NEXT_GOAL, QUEUE).task_id
+
+        
+        #! Here the goal is taken from the queue
+        if not rospy.get_param('/hrisim/robot_busy') and len(QUEUE) > 0:
+            next_sub_goal = QUEUE.pop(0)
+            rospy.logwarn(f"Planning next goal: {next_sub_goal}")
+            nextnext_sub_goal = QUEUE[0] if len(QUEUE) > 0 else None
+            if nextnext_sub_goal is None and TASK is constants.Task.CLEANING: 
+                nextnext_sub_goal = CLEANING_PATH[0] if len(CLEANING_PATH) > 0 else None
+                
+            send_goal(p, next_sub_goal, nextnext_sub_goal)
+            
+            # Publish +1 when reaching the final goal
+            if len(QUEUE) == 0:
+                finish_task_service(task_id, constants.TaskResult.SUCCESS.value)  # 1 for success
+
+        
+    rospy.set_param("/peopleflow/robot_plan_on", PLAN_ON)
+
+                                   
 def cb_battery(msg):
-    global BATTERY_LEVEL, BATTERY_ISCHARGING
+    global BATTERY_LEVEL, QUEUE, NEXT_GOAL, GO_TO_CHARGER
     BATTERY_LEVEL = float(msg.level.data)
-    BATTERY_ISCHARGING = bool(msg.is_charging.data)
+    if not GO_TO_CHARGER and not rospy.get_param('/robot_battery/is_charging') and BATTERY_LEVEL <= 20:
+        rospy.logwarn("Cancelling all goals..")
+        client = actionlib.SimpleActionClient('/move_base', MoveBaseAction)
+        client.wait_for_server()
+        client.cancel_all_goals()
+        p.action_cmd('goto', "", 'interrupt')
+        while rospy.get_param('/hrisim/robot_busy'): rospy.sleep(0.1)
+        NEXT_GOAL = None
+        QUEUE = []
+        GO_TO_CHARGER = True
+        
+    elif BATTERY_LEVEL == 100 and rospy.get_param('/robot_battery/is_charging'):
+        rospy.set_param('/robot_battery/is_charging', False)
+        rospy.logwarn("Battery is already full, not planning any tasks.")
+        
+    
+def cb_robot_closest_wp(wp: String):
+    global ROBOT_CLOSEST_WP
+    ROBOT_CLOSEST_WP = wp.data
+    
+    
+def cb_odom(odom: Odometry):
+    v = abs(odom.twist.twist.linear.x)
+    
     
 if __name__ == "__main__":  
-    wp = -1
-    SCENARIO = '/root/ros_ws/src/pedsim_ros/pedsim_simulator/scenarios/warehouse'
-    SHELFS, DP, KITCHEN, CHARGING_STATION = readScenario()
     BATTERY_LEVEL = None
-    BATTERY_ISCHARGING = None
+    ROBOT_CLOSEST_WP = None
+    NEXT_GOAL = None
+    GO_TO_CHARGER = False
+    QUEUE = []
     
-    rospy.Subscriber("/hrisim/robot_battery", BatteryStatus, cb_battery)
-
     p = PNPCmd()
+    
+    g_path = ros_utils.wait_for_param("/peopleflow_pedsim_bridge/g_path")
+    with open(g_path, 'rb') as f:
+        G = pickle.load(f)
+        G.remove_node("parking")
+    CLEANING_PATH = nx.approximation.traveling_salesman_problem(G, cycle=False)
+    rospy.Subscriber("/hrisim/robot_battery", BatteryStatus, cb_battery)
+    rospy.Subscriber("/hrisim/robot_closest_wp", String, cb_robot_closest_wp)
+    rospy.Subscriber("/mobile_base_controller/odom", Odometry, cb_odom)
+
+    TIME_THRESHOLD = ros_utils.wait_for_param("/hrisim/abort_time_threshold")
 
     p.begin()
 

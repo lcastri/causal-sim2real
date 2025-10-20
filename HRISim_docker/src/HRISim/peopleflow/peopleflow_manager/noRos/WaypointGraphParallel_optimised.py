@@ -58,9 +58,9 @@ def line_of_sight_task(args):
 
 
 # Initialize ROS node
-SCENARIO = "/home/lcastri/git/PeopleFlow/HRISim_docker/pedsim_ros/pedsim_simulator/scenarios/warehouse"
-MAP_NAME = os.path.expanduser('/home/lcastri/git/PeopleFlow/HRISim_docker/HRISim/hrisim_gazebo/tiago_maps/') + 'warehouse'
-RES_DIR = "/home/lcastri/git/PeopleFlow/HRISim_docker/HRISim/peopleflow/peopleflow_manager/res"
+SCENARIO = "/home/hrisim/ros_ws/src/pedsim_ros/pedsim_simulator/scenarios/warehouse"
+MAP_NAME = os.path.expanduser('/home/hrisim/ros_ws/src/HRISim/hrisim_gazebo/tiago_maps/') + 'warehouse'
+RES_DIR = "/home/hrisim/ros_ws/src/HRISim/peopleflow/peopleflow_manager/res"
 
 # Create directory for results
 scenario_name = SCENARIO.split("/")[-1]

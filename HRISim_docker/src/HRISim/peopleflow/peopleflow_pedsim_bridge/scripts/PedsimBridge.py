@@ -156,7 +156,6 @@ if __name__ == '__main__':
     
     SCHEDULE = ros_utils.wait_for_param("/peopleflow/schedule")
     WPS = ros_utils.wait_for_param("/peopleflow/wps")
-    OBSTACLES = ros_utils.wait_for_param("/peopleflow/obstacles")
     ALLOW_TASK = rospy.get_param("~allow_task", False)
     MAX_TASKTIME = int(rospy.get_param("~max_tasktime"))
     g_path = str(rospy.get_param("~g_path"))
@@ -165,9 +164,7 @@ if __name__ == '__main__':
         ros_utils.load_graph_to_rosparam(G, "/peopleflow/G")
         
         # Create a handle for the Trigger service
-        graph_weight_update = rospy.ServiceProxy('/graph/weights/update', Empty)
         graph_path_show = rospy.ServiceProxy('/graph/path/show', VisualisePath)        # Call the service
-        graph_weight_update()
         graph_path_show("")
         
         G.remove_node(constants.WP.CHARGING_STATION.value)
