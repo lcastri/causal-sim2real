@@ -39,7 +39,7 @@ init_cmd: |
 
   # world arguments
   # choose a map between: maze, maze_corridor, maze_corridor_withTurn, maze_corridor_withDoors
-  export_default WORLD "warehouse"
+  export_default WORLD "poster"
 
   # navigation specific arguments
   export_default GLOBAL_PLANNER "global_planner"
@@ -56,7 +56,7 @@ init_cmd: |
   # robot_mode == 0: CONTROLLED implies that the robot's velocity is set by some planning algorithm like DWA. Its very similar to the teleoperation mode, using tf in the mix is just a layer on top of this -->
   # robot_mode == 1: TELEOPERATION , we map the output of a teleop node (like joystick) to drive the robot -->
   # robot_mode == 2: SOCIAL mode means the robot's velocity is set by the social force just like the other agents -->
-  export_default SCENARIO "warehouse"
+  export_default SCENARIO "poster"
   export_default ALLOW_TASK "true"
   export_default STARTING_ELAPSED "8"
   export_default MAX_TASKTIME "60"
@@ -106,7 +106,8 @@ windows:
     tags: ['core']
     panes:
       - 'roslaunch pnp_ros pnp_ros.launch plans_folder:=$PNP_PLANS actions_folder:=$PNP_ACTIONS conditions_folder:=$PNP_CONDITIONS'
-      - 'rosparam set /hrisim/abort_time_threshold $ABORT_TIME_THRESHOLD && roscd hrisim_plans/scripts && python TIAGo_plan.py'
+      - 'rosparam set /hrisim/abort_time_threshold $ABORT_TIME_THRESHOLD'
+      # - 'rosparam set /hrisim/abort_time_threshold $ABORT_TIME_THRESHOLD && roscd hrisim_plans/scripts && python TIAGo_plan.py'
   - name: pedsim
     tags: ['exp']
     panes:
