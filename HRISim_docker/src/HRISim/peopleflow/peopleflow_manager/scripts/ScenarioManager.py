@@ -105,7 +105,7 @@ def pub_time():
 def isFinished():
     global TSTOP
     
-    if SM.elapsedTime is not None and (SM.elapsedTime > SM.T or not rospy.get_param("/peopleflow/robot_plan_on")) and not TSTOP:
+    if SM.elapsedTime is not None and SM.elapsedTime > SM.T and not TSTOP:
         try:
             TSTOP = True
             shutdown_service()
@@ -137,7 +137,6 @@ if __name__ == '__main__':
     rospy.Service('/hrisim/shutdown', Empty, shutdown_cb)
     shutdown_service = rospy.ServiceProxy('/hrisim/shutdown', Empty)
     rospy.set_param('/peopleflow/timeday', str(SM.timeOfTheDay))
-    ros_utils.wait_for_param("/peopleflow/robot_plan_on")
 
     rospy.logwarn("PeopleFlow Manager started!")
     while not rospy.is_shutdown():

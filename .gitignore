@@ -362,6 +362,7 @@ dist/
 *.csv
 
 /results/*
+/HRISim_docker/src/HRISim/hrisim_postprocess/*
 /shared/*
 /utilities_ws/*
 *.vscode

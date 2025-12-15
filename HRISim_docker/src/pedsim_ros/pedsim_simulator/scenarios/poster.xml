@@ -6390,7 +6390,7 @@
     <addwaypoint id="target-6"/>
     <addwaypoint id="target-7"/>
   </agent>
-  <agent x="8" y="20" n="1" dx="2" dy="5" type="0">
+  <!-- <agent x="8" y="20" n="1" dx="2" dy="5" type="0">
     <addwaypoint id="office-1"/>
     <addwaypoint id="office-2"/>
     <addwaypoint id="toilet-1"/>
@@ -7808,7 +7808,7 @@
     <addwaypoint id="target-5"/>
     <addwaypoint id="target-6"/>
     <addwaypoint id="target-7"/>
-  </agent>
+  </agent> -->
   
   <schedule>
     <!-- Time resolution: seconds -->
@@ -7848,21 +7848,21 @@
     <!-- 02h : 9am - 10am -->
     <time name="H2" duration="50400" >
       <adddest name="parking"         p="0" std="0" />
-      <adddest name="office-1"        p="0.05" std="0" />
-      <adddest name="office-2"        p="0.05" std="0" />
-      <adddest name="toilet-1"        p="0.05" std="0" />
-      <adddest name="toilet-2"        p="0.05" std="0" />
+      <adddest name="office-1"        p="0" std="0" />
+      <adddest name="office-2"        p="0" std="0" />
+      <adddest name="toilet-1"        p="0" std="0" />
+      <adddest name="toilet-2"        p="0" std="0" />
       <adddest name="wa-1-l"          p="0" std="0"/>
       <adddest name="wa-1-c"          p="0" std="0"/>
       <adddest name="wa-1-r"          p="0" std="0"/>
       <adddest name="wa-2-l"          p="0" std="0"/>
-      <adddest name="wa-2-c"          p="0.38" std="0"/>
+      <adddest name="wa-2-c"          p="0.5" std="0"/>
       <adddest name="wa-2-r"          p="0" std="0"/>
       <adddest name="wa-3-l"          p="0" std="0"/>
       <adddest name="wa-3-c"          p="0" std="0"/>
       <adddest name="wa-3-r"          p="0" std="0"/>
       <adddest name="wa-4-l"          p="0" std="0"/>
-      <adddest name="wa-4-c"          p="0.38" std="0"/>
+      <adddest name="wa-4-c"          p="0.5" std="0"/>
       <adddest name="wa-4-r"          p="0" std="0"/>
       <adddest name="wa-5-l"          p="0" std="0"/>
       <adddest name="wa-5-c"          p="0" std="0"/>
@@ -7874,10 +7874,10 @@
       <adddest name="target-5"        p="0" std="0"/>
       <adddest name="target-6"        p="0" std="0"/>
       <adddest name="target-7"        p="0" std="0"/>
-      <adddest name="table-12"        p="0.01" std="0" />
-      <adddest name="table-23"        p="0.01" std="0" />
-      <adddest name="corridor-canteen-2"       p="0.01" std="0" />
-      <adddest name="corridor-canteen-3"       p="0.01" std="0" />
+      <adddest name="table-12"        p="0" std="0" />
+      <adddest name="table-23"        p="0" std="0" />
+      <adddest name="corridor-canteen-2"       p="0" std="0" />
+      <adddest name="corridor-canteen-3"       p="0" std="0" />
     </time>
     <!-- 03h : 10am - 11am -->
     <!-- <time name="H3" duration="360" >
