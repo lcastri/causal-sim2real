@@ -1172,10 +1172,180 @@
       <static>1</static>
     </model>
     <state world_name='default'>
-      <sim_time>3428 934000000</sim_time>
-      <real_time>163 349140677</real_time>
-      <wall_time>1761583690 501348786</wall_time>
-      <iterations>162784</iterations>
+      <sim_time>3842 787000000</sim_time>
+      <real_time>418 390858692</real_time>
+      <wall_time>1765929614 294737400</wall_time>
+      <iterations>413853</iterations>
+      <model name='apple_juice_box'>
+        <pose>6.12338 -4.39118 1.12 -0 -0 -1e-05</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>6.12338 -4.39118 1.12 -0 -0 -1e-05</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0 -0 0 0 -0 0</acceleration>
+          <wrench>-0 -0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='apple_juice_box_clone'>
+        <pose>5.86036 -4.26534 1.12 0 0 -1e-05</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>5.86036 -4.26534 1.12 0 0 -1e-05</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0 0 -0 -0 -0 -0</acceleration>
+          <wrench>-0 0 -0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='apple_juice_box_clone_0'>
+        <pose>5.99182 -4.27276 1.12 0 -0 -1e-05</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>5.99182 -4.27276 1.12 0 -0 -1e-05</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 -0 -0 0 -0 0</acceleration>
+          <wrench>0 -0 -0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='beer_rothaus'>
+        <pose>5.65456 -5.0024 0.999999 0 0 -0.000962</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>5.65456 -5.0024 0.999999 0 0 -0.000962</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0 -0 0 0 -0 0</acceleration>
+          <wrench>-0 -0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='beer_rothaus_clone'>
+        <pose>5.72557 -4.90663 0.999999 0 0 -0.000962</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>5.72557 -4.90663 0.999999 0 0 -0.000962</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 -0 0 0 -0 0</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='beer_rothaus_clone_0'>
+        <pose>7.48634 -4.55474 0.999999 0 0 -0.000962</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>7.48634 -4.55474 0.999999 0 0 -0.000962</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0 -0 0 0 -0 0</acceleration>
+          <wrench>-0 -0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='beer_rothaus_clone_1'>
+        <pose>7.47927 -4.80934 0.999999 0 0 -0.000962</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>7.47927 -4.80934 0.999999 0 0 -0.000962</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 -0 0 0 -0 0</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='beer_rothaus_clone_10'>
+        <pose>8.35275 4.17432 0.999999 0 0 -0.000962</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>8.35275 4.17432 0.999999 0 0 -0.000962</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 -0 -0 0 -0 0</acceleration>
+          <wrench>0 -0 -0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='beer_rothaus_clone_11'>
+        <pose>8.64498 4.36016 0.999999 0 0 -0.000962</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>8.64498 4.36016 0.999999 0 0 -0.000962</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 -0 -0 0 -0 0</acceleration>
+          <wrench>0 -0 -0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='beer_rothaus_clone_2'>
+        <pose>7.63145 -4.82925 0.999999 0 0 -0.000962</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>7.63145 -4.82925 0.999999 0 0 -0.000962</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 -0 0 0 -0 0</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='beer_rothaus_clone_3'>
+        <pose>7.60629 -4.56875 0.999999 0 0 -0.000962</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>7.60629 -4.56875 0.999999 0 0 -0.000962</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 -0 0 0 -0 0</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='beer_rothaus_clone_4'>
+        <pose>8.42356 -0.066664 0.999999 0 0 -0.000962</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>8.42356 -0.066664 0.999999 0 0 -0.000962</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='beer_rothaus_clone_5'>
+        <pose>8.61844 -0.034393 0.999999 0 0 -0.000962</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>8.61844 -0.034393 0.999999 0 0 -0.000962</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='beer_rothaus_clone_6'>
+        <pose>8.36715 -0.241709 0.999999 0 0 -0.000962</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>8.36715 -0.241709 0.999999 0 0 -0.000962</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0 -0 0 0 -0 0</acceleration>
+          <wrench>-0 -0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='beer_rothaus_clone_7'>
+        <pose>8.4989 -0.342938 0.999999 0 0 -0.000962</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>8.4989 -0.342938 0.999999 0 0 -0.000962</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 -0 -0 0 -0 0</acceleration>
+          <wrench>0 -0 -0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='beer_rothaus_clone_8'>
+        <pose>8.15455 4.44614 0.999999 0 0 -0.000962</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>8.15455 4.44614 0.999999 0 0 -0.000962</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0 -0 -0 0 -0 0</acceleration>
+          <wrench>-0 -0 -0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='beer_rothaus_clone_9'>
+        <pose>8.39089 4.547 0.999999 0 0 -0.000962</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>8.39089 4.547 0.999999 0 0 -0.000962</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 -0 0 0 -0 0</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
+        </link>
+      </model>
       <model name='delivery_point_0'>
         <pose>-5.19681 -5.29 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -1316,6 +1486,36 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
+      <model name='green_tea'>
+        <pose>5.69037 -4.26707 1.0975 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>5.69037 -4.26707 1.0975 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0 0 -0 0 -0 0</acceleration>
+          <wrench>-0 0 -0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='green_tea_clone'>
+        <pose>5.8619 -4.44105 1.0975 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>5.8619 -4.44105 1.0975 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0 0 -0 0 -0 0</acceleration>
+          <wrench>-0 0 -0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='green_tea_clone_0'>
+        <pose>5.69349 -4.4487 1.0975 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>5.69349 -4.4487 1.0975 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 -0 0 0 -0 0</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
+        </link>
+      </model>
       <model name='ground_plane'>
         <pose>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -1324,6 +1524,166 @@
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='pizza_box'>
+        <pose>6.08946 -0.068167 0.999998 0 -0 2.4e-05</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>6.08946 -0.068167 0.999998 0 -0 2.4e-05</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 -0 0 0 -0 0</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='pizza_box_clone'>
+        <pose>7.04732 -0.050262 0.999998 0 -0 2.4e-05</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>7.04732 -0.050262 0.999998 0 -0 2.4e-05</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0 0 -0 0 -0 0</acceleration>
+          <wrench>-0 0 -0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='pizza_box_clone_0'>
+        <pose>8.02648 -4.55547 0.999998 0 -0 2.4e-05</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>8.02648 -4.55547 0.999998 0 -0 2.4e-05</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0 -0 -0 0 -0 0</acceleration>
+          <wrench>-0 -0 -0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='pizza_box_clone_1'>
+        <pose>8.54673 -4.5393 0.999998 0 -0 2.4e-05</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>8.54673 -4.5393 0.999998 0 -0 2.4e-05</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -0 0 -0 0</acceleration>
+          <wrench>0 0 -0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='pizza_box_clone_2'>
+        <pose>9.00564 -4.46765 0.999998 0 -0 2.4e-05</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>9.00564 -4.46765 0.999998 0 -0 2.4e-05</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 -0 -0 0 -0 0</acceleration>
+          <wrench>0 -0 -0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='pizza_box_clone_clone'>
+        <pose>7.85209 -0.07633 0.999998 0 -0 2.4e-05</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>7.85209 -0.07633 0.999998 0 -0 2.4e-05</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 -0 -0 0 -0 0</acceleration>
+          <wrench>0 -0 -0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='pizza_box_clone_clone_clone'>
+        <pose>5.74721 4.43536 0.999998 0 -0 2.4e-05</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>5.74721 4.43536 0.999998 0 -0 2.4e-05</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0 -0 -0 0 -0 0</acceleration>
+          <wrench>-0 -0 -0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='pizza_box_clone_clone_clone_clone'>
+        <pose>6.61114 4.48392 0.999998 0 -0 2.4e-05</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>6.61114 4.48392 0.999998 0 -0 2.4e-05</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 -0 -0 0 -0 0</acceleration>
+          <wrench>0 -0 -0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='pizza_box_clone_clone_clone_clone_0'>
+        <pose>7.51683 4.48 0.999998 0 -0 2.4e-05</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>7.51683 4.48 0.999998 0 -0 2.4e-05</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 -0 -0 0 -0 0</acceleration>
+          <wrench>0 -0 -0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='pringles_red'>
+        <pose>6.34426 0.168165 1 0 -0 -1.33947</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>6.34426 0.168165 1 0 -0 -1.33947</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -0 0 -0 0</acceleration>
+          <wrench>0 0 -0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='pringles_red_clone'>
+        <pose>6.6211 -0.19886 1 0 -0 -1.33947</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>6.6211 -0.19886 1 0 -0 -1.33947</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='pringles_red_clone_0'>
+        <pose>6.64349 -4.65936 1 0 -0 -1.33947</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>6.64349 -4.65936 1 0 -0 -1.33947</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='pringles_red_clone_1'>
+        <pose>6.83026 -4.55152 1 0 -0 -1.33947</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>6.83026 -4.55152 1 0 -0 -1.33947</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0 -0 0 0 -0 0</acceleration>
+          <wrench>-0 -0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='pringles_red_clone_2'>
+        <pose>6.8465 -4.77334 1 0 -0 -1.33947</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>6.8465 -4.77334 1 0 -0 -1.33947</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0 0 0 0 -0 0</acceleration>
+          <wrench>-0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='pringles_red_clone_3'>
+        <pose>7.03565 4.29332 1 0 -0 -1.33947</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>7.03565 4.29332 1 0 -0 -1.33947</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='pringles_red_clone_4'>
+        <pose>6.1926 4.40977 1 0 -0 -1.33947</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>6.1926 4.40977 1 0 -0 -1.33947</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -0 0 -0 0</acceleration>
+          <wrench>0 0 -0 0 -0 0</wrench>
         </link>
       </model>
       <model name='shelves'>
@@ -1382,6 +1742,36 @@
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='tea_box'>
+        <pose>6.16236 -4.88396 1.0365 0 -0 0.000193</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>6.16236 -4.88396 1.0365 0 -0 0.000193</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0 -0 0 0 -0 0</acceleration>
+          <wrench>-0 -0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='tea_box_clone'>
+        <pose>6.32396 -4.89572 1.0365 0 -0 0.000193</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>6.32396 -4.89572 1.0365 0 -0 0.000193</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='tea_box_clone_0'>
+        <pose>6.00103 -4.87055 1.0365 0 -0 0.000193</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>6.00103 -4.87055 1.0365 0 -0 0.000193</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0 0 0 0 -0 0</acceleration>
+          <wrench>-0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='wall_delivery_point'>
@@ -1695,7 +2085,7 @@
     </model>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>-3.82066 -0.158421 35.6892 -5.8e-05 1.5698 1.5699</pose>
+        <pose>10.2994 -20.5383 9.68972 0 0.3818 1.83393</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -2871,6 +3261,2187 @@
         <kinematic>0</kinematic>
       </link>
       <static>1</static>
+    </model>
+    <model name='pizza_box'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.7</mass>
+          <pose>0 0 0.0175 0 -0 0</pose>
+          <inertia>
+            <ixx>0.021</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0099</iyy>
+            <iyz>0</iyz>
+            <izz>0.031</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.0175 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.41 0.6 0.035</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://pizza_box/meshes/pizza_box.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>6.0898 -0.067964 0 0 -0 0</pose>
+    </model>
+    <model name='pizza_box_clone'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.7</mass>
+          <pose>0 0 0.0175 0 -0 0</pose>
+          <inertia>
+            <ixx>0.021</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0099</iyy>
+            <iyz>0</iyz>
+            <izz>0.031</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.0175 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.41 0.6 0.035</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://pizza_box/meshes/pizza_box.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>7.04732 -0.050262 0.999998 0 -0 2.4e-05</pose>
+    </model>
+    <model name='pizza_box_clone_clone'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.7</mass>
+          <pose>0 0 0.0175 0 -0 0</pose>
+          <inertia>
+            <ixx>0.021</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0099</iyy>
+            <iyz>0</iyz>
+            <izz>0.031</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.0175 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.41 0.6 0.035</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://pizza_box/meshes/pizza_box.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>7.85209 -0.07633 0.999998 0 -0 2.4e-05</pose>
+    </model>
+    <model name='pizza_box_clone_clone_clone'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.7</mass>
+          <pose>0 0 0.0175 0 -0 0</pose>
+          <inertia>
+            <ixx>0.021</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0099</iyy>
+            <iyz>0</iyz>
+            <izz>0.031</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.0175 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.41 0.6 0.035</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://pizza_box/meshes/pizza_box.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>5.74721 4.43536 0.999998 0 -0 2.4e-05</pose>
+    </model>
+    <model name='pizza_box_clone_clone_clone_clone'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.7</mass>
+          <pose>0 0 0.0175 0 -0 0</pose>
+          <inertia>
+            <ixx>0.021</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0099</iyy>
+            <iyz>0</iyz>
+            <izz>0.031</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.0175 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.41 0.6 0.035</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://pizza_box/meshes/pizza_box.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>6.61114 4.48392 0.999998 0 -0 2.4e-05</pose>
+    </model>
+    <model name='pizza_box_clone_clone_clone_clone_0'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.7</mass>
+          <pose>0 0 0.0175 0 -0 0</pose>
+          <inertia>
+            <ixx>0.021</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0099</iyy>
+            <iyz>0</iyz>
+            <izz>0.031</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.0175 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.41 0.6 0.035</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://pizza_box/meshes/pizza_box.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>7.51683 4.48 0.999998 0 -0 2.4e-05</pose>
+    </model>
+    <model name='green_tea'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>1.37</mass>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0052</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0047</iyy>
+            <iyz>0</iyz>
+            <izz>0.0013</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.057 0.091 0.195</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://green_tea/meshes/green_tea.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>5.69037 -4.26707 0 0 -0 0</pose>
+    </model>
+    <model name='green_tea_clone'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>1.37</mass>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0052</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0047</iyy>
+            <iyz>0</iyz>
+            <izz>0.0013</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.057 0.091 0.195</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://green_tea/meshes/green_tea.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>5.8619 -4.44105 1.0975 0 -0 0</pose>
+    </model>
+    <model name='green_tea_clone_0'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>1.37</mass>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0052</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0047</iyy>
+            <iyz>0</iyz>
+            <izz>0.0013</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.057 0.091 0.195</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://green_tea/meshes/green_tea.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>5.69349 -4.4487 1.0975 0 -0 0</pose>
+    </model>
+    <model name='apple_juice_box'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.475</mass>
+          <pose>0 0 -0.03 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0027</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0026</iyy>
+            <iyz>0</iyz>
+            <izz>0.0003</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.0055 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.062 0.07 0.251</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>50</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://apple_juice_box/meshes/apple_juice_box.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>6.12336 -4.39118 0 0 -0 0</pose>
+    </model>
+    <model name='apple_juice_box_clone'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.475</mass>
+          <pose>0 0 -0.03 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0027</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0026</iyy>
+            <iyz>0</iyz>
+            <izz>0.0003</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.0055 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.062 0.07 0.251</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>50</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://apple_juice_box/meshes/apple_juice_box.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>5.86036 -4.26534 1.12 0 0 -1e-05</pose>
+    </model>
+    <model name='apple_juice_box_clone_0'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.475</mass>
+          <pose>0 0 -0.03 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0027</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0026</iyy>
+            <iyz>0</iyz>
+            <izz>0.0003</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.0055 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.062 0.07 0.251</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>50</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://apple_juice_box/meshes/apple_juice_box.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>5.99182 -4.27276 1.12 0 0 -1e-05</pose>
+    </model>
+    <model name='pringles_red'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.045</mass>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <inertia>
+            <ixx>0.00022</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00022</iyy>
+            <iyz>0</iyz>
+            <izz>4e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.115 0 -0 -3.14159</pose>
+          <geometry>
+            <box>
+              <size>0.075 0.075 0.23</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 -3.14159</pose>
+          <geometry>
+            <mesh>
+              <uri>model://pringles_red/meshes/pringles_red.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>6.39901 0.159079 0 0 -0 0</pose>
+    </model>
+    <model name='pringles_red_clone'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.045</mass>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <inertia>
+            <ixx>0.00022</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00022</iyy>
+            <iyz>0</iyz>
+            <izz>4e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.115 0 -0 -3.14159</pose>
+          <geometry>
+            <box>
+              <size>0.075 0.075 0.23</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 -3.14159</pose>
+          <geometry>
+            <mesh>
+              <uri>model://pringles_red/meshes/pringles_red.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>6.6211 -0.19886 1 0 -0 -1.33947</pose>
+    </model>
+    <model name='pringles_red_clone_0'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.045</mass>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <inertia>
+            <ixx>0.00022</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00022</iyy>
+            <iyz>0</iyz>
+            <izz>4e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.115 0 -0 -3.14159</pose>
+          <geometry>
+            <box>
+              <size>0.075 0.075 0.23</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 -3.14159</pose>
+          <geometry>
+            <mesh>
+              <uri>model://pringles_red/meshes/pringles_red.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>6.64349 -4.65936 1 0 -0 -1.33947</pose>
+    </model>
+    <model name='pringles_red_clone_1'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.045</mass>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <inertia>
+            <ixx>0.00022</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00022</iyy>
+            <iyz>0</iyz>
+            <izz>4e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.115 0 -0 -3.14159</pose>
+          <geometry>
+            <box>
+              <size>0.075 0.075 0.23</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 -3.14159</pose>
+          <geometry>
+            <mesh>
+              <uri>model://pringles_red/meshes/pringles_red.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>6.83026 -4.55152 1 0 -0 -1.33947</pose>
+    </model>
+    <model name='pringles_red_clone_2'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.045</mass>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <inertia>
+            <ixx>0.00022</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00022</iyy>
+            <iyz>0</iyz>
+            <izz>4e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.115 0 -0 -3.14159</pose>
+          <geometry>
+            <box>
+              <size>0.075 0.075 0.23</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 -3.14159</pose>
+          <geometry>
+            <mesh>
+              <uri>model://pringles_red/meshes/pringles_red.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>6.8465 -4.77334 1 0 -0 -1.33947</pose>
+    </model>
+    <model name='pringles_red_clone_3'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.045</mass>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <inertia>
+            <ixx>0.00022</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00022</iyy>
+            <iyz>0</iyz>
+            <izz>4e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.115 0 -0 -3.14159</pose>
+          <geometry>
+            <box>
+              <size>0.075 0.075 0.23</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 -3.14159</pose>
+          <geometry>
+            <mesh>
+              <uri>model://pringles_red/meshes/pringles_red.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>7.03565 4.29332 1 0 -0 -1.33947</pose>
+    </model>
+    <model name='pringles_red_clone_4'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.045</mass>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <inertia>
+            <ixx>0.00022</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00022</iyy>
+            <iyz>0</iyz>
+            <izz>4e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.115 0 -0 -3.14159</pose>
+          <geometry>
+            <box>
+              <size>0.075 0.075 0.23</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 -3.14159</pose>
+          <geometry>
+            <mesh>
+              <uri>model://pringles_red/meshes/pringles_red.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>6.1926 4.40977 1 0 -0 -1.33947</pose>
+    </model>
+    <model name='tea_box'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.081</mass>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0002</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>6e-05</iyy>
+            <iyz>0</iyz>
+            <izz>0.00019</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.063 0.158 0.073</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tea_box/meshes/tea_box.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>6.16073 -4.8839 0 0 -0 0</pose>
+    </model>
+    <model name='tea_box_clone'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.081</mass>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0002</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>6e-05</iyy>
+            <iyz>0</iyz>
+            <izz>0.00019</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.063 0.158 0.073</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tea_box/meshes/tea_box.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>6.32396 -4.89572 1.0365 0 -0 0.000193</pose>
+    </model>
+    <model name='tea_box_clone_0'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.081</mass>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0002</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>6e-05</iyy>
+            <iyz>0</iyz>
+            <izz>0.00019</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.063 0.158 0.073</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tea_box/meshes/tea_box.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>6.00103 -4.87055 1.0365 0 -0 0.000193</pose>
+    </model>
+    <model name='beer_rothaus'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.37</mass>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0017</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0017</iyy>
+            <iyz>0</iyz>
+            <izz>0.00019</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.055 0.055 0.23</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://beer_rothaus/meshes/beer_rothaus.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>5.65458 -4.87776 0 0 -0 0</pose>
+    </model>
+    <model name='beer_rothaus_clone'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.37</mass>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0017</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0017</iyy>
+            <iyz>0</iyz>
+            <izz>0.00019</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.055 0.055 0.23</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://beer_rothaus/meshes/beer_rothaus.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>5.72557 -4.90663 0.999999 0 0 -0.000962</pose>
+    </model>
+    <model name='beer_rothaus_clone_0'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.37</mass>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0017</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0017</iyy>
+            <iyz>0</iyz>
+            <izz>0.00019</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.055 0.055 0.23</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://beer_rothaus/meshes/beer_rothaus.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>7.48634 -4.55474 0.999999 0 0 -0.000962</pose>
+    </model>
+    <model name='beer_rothaus_clone_1'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.37</mass>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0017</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0017</iyy>
+            <iyz>0</iyz>
+            <izz>0.00019</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.055 0.055 0.23</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://beer_rothaus/meshes/beer_rothaus.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>7.47927 -4.80934 0.999999 0 0 -0.000962</pose>
+    </model>
+    <model name='beer_rothaus_clone_2'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.37</mass>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0017</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0017</iyy>
+            <iyz>0</iyz>
+            <izz>0.00019</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.055 0.055 0.23</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://beer_rothaus/meshes/beer_rothaus.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>7.63145 -4.82925 0.999999 0 0 -0.000962</pose>
+    </model>
+    <model name='beer_rothaus_clone_3'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.37</mass>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0017</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0017</iyy>
+            <iyz>0</iyz>
+            <izz>0.00019</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.055 0.055 0.23</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://beer_rothaus/meshes/beer_rothaus.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>7.60629 -4.56875 0.999999 0 0 -0.000962</pose>
+    </model>
+    <model name='beer_rothaus_clone_4'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.37</mass>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0017</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0017</iyy>
+            <iyz>0</iyz>
+            <izz>0.00019</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.055 0.055 0.23</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://beer_rothaus/meshes/beer_rothaus.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>8.42356 -0.066664 0.999999 0 0 -0.000962</pose>
+    </model>
+    <model name='beer_rothaus_clone_5'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.37</mass>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0017</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0017</iyy>
+            <iyz>0</iyz>
+            <izz>0.00019</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.055 0.055 0.23</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://beer_rothaus/meshes/beer_rothaus.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>8.61844 -0.034393 0.999999 0 0 -0.000962</pose>
+    </model>
+    <model name='beer_rothaus_clone_6'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.37</mass>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0017</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0017</iyy>
+            <iyz>0</iyz>
+            <izz>0.00019</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.055 0.055 0.23</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://beer_rothaus/meshes/beer_rothaus.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>8.36715 -0.241709 0.999999 0 0 -0.000962</pose>
+    </model>
+    <model name='beer_rothaus_clone_7'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.37</mass>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0017</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0017</iyy>
+            <iyz>0</iyz>
+            <izz>0.00019</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.055 0.055 0.23</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://beer_rothaus/meshes/beer_rothaus.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>8.4989 -0.342938 0.999999 0 0 -0.000962</pose>
+    </model>
+    <model name='beer_rothaus_clone_8'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.37</mass>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0017</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0017</iyy>
+            <iyz>0</iyz>
+            <izz>0.00019</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.055 0.055 0.23</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://beer_rothaus/meshes/beer_rothaus.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>8.15455 4.44614 0.999999 0 0 -0.000962</pose>
+    </model>
+    <model name='beer_rothaus_clone_9'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.37</mass>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0017</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0017</iyy>
+            <iyz>0</iyz>
+            <izz>0.00019</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.055 0.055 0.23</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://beer_rothaus/meshes/beer_rothaus.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>8.39089 4.547 0.999999 0 0 -0.000962</pose>
+    </model>
+    <model name='beer_rothaus_clone_10'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.37</mass>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0017</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0017</iyy>
+            <iyz>0</iyz>
+            <izz>0.00019</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.055 0.055 0.23</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://beer_rothaus/meshes/beer_rothaus.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>8.35275 4.17432 0.999999 0 0 -0.000962</pose>
+    </model>
+    <model name='beer_rothaus_clone_11'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.37</mass>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0017</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0017</iyy>
+            <iyz>0</iyz>
+            <izz>0.00019</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.115 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.055 0.055 0.23</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://beer_rothaus/meshes/beer_rothaus.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>8.64498 4.36016 0.999999 0 0 -0.000962</pose>
+    </model>
+    <model name='pizza_box_clone_0'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.7</mass>
+          <pose>0 0 0.0175 0 -0 0</pose>
+          <inertia>
+            <ixx>0.021</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0099</iyy>
+            <iyz>0</iyz>
+            <izz>0.031</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.0175 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.41 0.6 0.035</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://pizza_box/meshes/pizza_box.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>8.02648 -4.55547 0.999998 0 -0 2.4e-05</pose>
+    </model>
+    <model name='pizza_box_clone_1'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.7</mass>
+          <pose>0 0 0.0175 0 -0 0</pose>
+          <inertia>
+            <ixx>0.021</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0099</iyy>
+            <iyz>0</iyz>
+            <izz>0.031</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.0175 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.41 0.6 0.035</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://pizza_box/meshes/pizza_box.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>8.54673 -4.5393 0.999998 0 -0 2.4e-05</pose>
+    </model>
+    <model name='pizza_box_clone_2'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.7</mass>
+          <pose>0 0 0.0175 0 -0 0</pose>
+          <inertia>
+            <ixx>0.021</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0099</iyy>
+            <iyz>0</iyz>
+            <izz>0.031</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose>0 0 0.0175 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.41 0.6 0.035</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://pizza_box/meshes/pizza_box.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>9.00564 -4.46765 0.999998 0 -0 2.4e-05</pose>
     </model>
   </world>
 </sdf>
