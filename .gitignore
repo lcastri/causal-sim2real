@@ -374,3 +374,4 @@ HRISim_docker/HRISim/prediction/hrisim_prediction_manager/DAGs/*
 HRISim_docker/HRISim/peopleflow/peopleflow_manager/hardcoded/*
 HRISim_docker/HRISim/hrisim_plans/hardcoded/*
 pd/*
+HRISim_docker/src/*
