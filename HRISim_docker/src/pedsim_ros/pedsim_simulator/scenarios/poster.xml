@@ -6159,7 +6159,7 @@
   </agent>
 
   <!--Agent (type = 0)-->
-  <agent x="8" y="20" n="1" dx="2" dy="5" type="0">
+  <!-- <agent x="8" y="20" n="1" dx="2" dy="5" type="0">
     <addwaypoint id="office-1"/>
     <addwaypoint id="office-2"/>
     <addwaypoint id="toilet-1"/>
@@ -7148,7 +7148,17 @@
     <addwaypoint id="target-5"/>
     <addwaypoint id="target-6"/>
     <addwaypoint id="target-7"/>
-  </agent>
+  </agent> -->
+
+
+
+
+
+
+
+
+
+  
   <!--
   <agent x="8" y="20" n="1" dx="2" dy="5" type="0">
     <addwaypoint id="office-1"/>

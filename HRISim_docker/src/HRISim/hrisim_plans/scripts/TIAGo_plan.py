@@ -21,24 +21,35 @@ import hrisim_util.constants as constants
 import networkx as nx
 from robot_srvs.srv import NewTask, FinishTask, VisualisePath
 from nav_msgs.msg import Odometry
-
+from std_srvs.srv import Empty
 
 WORKING_TOP_TARGETS = [constants.WP.TARGET_1.value, constants.WP.TARGET_2.value, constants.WP.TARGET_3.value]
 WORKING_BOTTOM_TARGETS = [constants.WP.TARGET_4.value, constants.WP.TARGET_5.value, constants.WP.TARGET_6.value]
 LUNCH_TARGETS = [constants.WP.ENTRANCE.value, constants.WP.TARGET_7.value]
 
 
-def send_goal(p, next_dest, nextnext_dest=None):
-    global OBS_SPAWNED_TIME
+# def send_goal(p, next_dest, nextnext_dest=None):
+#     global OBS_SPAWNED_TIME
+#     pos = nx.get_node_attributes(G, 'pos')
+#     x, y = pos[next_dest]
+#     if nextnext_dest is not None:
+#         x2, y2 = pos[nextnext_dest]
+#         angle = math.atan2(y2-y, x2-x)
+#         inputs = [x, y, angle, TIME_THRESHOLD]
+#     else:
+#         inputs = [x, y, 0, TIME_THRESHOLD]
+#     p.exec_action('goto', "_".join([str(input) for input in inputs]))
+
+def send_goal(p, next_dest, nextnext_dest=None, time_threshold=-1):
     pos = nx.get_node_attributes(G, 'pos')
     x, y = pos[next_dest]
     if nextnext_dest is not None:
         x2, y2 = pos[nextnext_dest]
         angle = math.atan2(y2-y, x2-x)
-        inputs = [x, y, angle, TIME_THRESHOLD]
+        inputs = [x, y, angle, time_threshold, 1 if not rospy.get_param('/hrisim/robot_obs') else 0]
     else:
-        inputs = [x, y, 0, TIME_THRESHOLD]
-    p.exec_action('goto', "_".join([str(input) for input in inputs]))
+        inputs = [x, y, 0, time_threshold, 0]
+    p.exec_action('gotoobs', "_".join([str(_input) for _input in inputs]))
     
     
 def heuristic(a, b):
@@ -79,22 +90,27 @@ def Plan(p):
     while not ros_utils.wait_for_param("/pnp_ros/ready"):
         rospy.sleep(0.1)
         
-    global NEXT_GOAL, QUEUE, GO_TO_CHARGER
+    global NEXT_GOAL, QUEUE, GO_TO_CHARGER, dynobs_remove_service, dynobs_timer_service
     
     ros_utils.wait_for_service('/hrisim/new_task')
     ros_utils.wait_for_service('/hrisim/finish_task')
     ros_utils.wait_for_service('/hrisim/shutdown')
     ros_utils.wait_for_service('/graph/path/show')
+    ros_utils.wait_for_service('/hrisim/obstacles/remove')
+    ros_utils.wait_for_service('/hrisim/obstacles/timer/off')
+    ros_utils.wait_for_service('/hrisim/shutdown')
 
     new_task_service = rospy.ServiceProxy('/hrisim/new_task', NewTask)
     finish_task_service = rospy.ServiceProxy('/hrisim/finish_task', FinishTask)
     graph_path_show = rospy.ServiceProxy('/graph/path/show', VisualisePath)
+    dynobs_remove_service = rospy.ServiceProxy('/hrisim/obstacles/remove', Empty)
+    dynobs_timer_service = rospy.ServiceProxy('/hrisim/obstacles/timer/off', Empty) 
+    shutdown_service = rospy.ServiceProxy('/hrisim/shutdown', Empty)
     
     
     ros_utils.wait_for_param("/peopleflow/timeday")
     rospy.set_param('/hrisim/robot_busy', False)
     PLAN_ON = True
-    rospy.set_param("/peopleflow/robot_plan_on", PLAN_ON)
     
     while PLAN_ON:
         rospy.logerr("Planning..")
@@ -105,7 +121,7 @@ def Plan(p):
             while QUEUE:
                 current_wp = QUEUE.pop(0)
                 next_wp = QUEUE[0] if QUEUE else None
-                send_goal(p, current_wp, next_wp)
+                send_goal(p, current_wp, next_wp, TIME_THRESHOLD)
             GO_TO_CHARGER = False
             TASK = constants.Task.CHARGING
             finish_task_service(task_id, constants.TaskResult.FAILURE.value)  # 1 for success
@@ -131,14 +147,13 @@ def Plan(p):
             if nextnext_sub_goal is None and TASK is constants.Task.CLEANING: 
                 nextnext_sub_goal = CLEANING_PATH[0] if len(CLEANING_PATH) > 0 else None
                 
-            send_goal(p, next_sub_goal, nextnext_sub_goal)
+            send_goal(p, next_sub_goal, nextnext_sub_goal, TIME_THRESHOLD)
             
             # Publish +1 when reaching the final goal
             if len(QUEUE) == 0:
                 finish_task_service(task_id, constants.TaskResult.SUCCESS.value)  # 1 for success
 
-        
-    rospy.set_param("/peopleflow/robot_plan_on", PLAN_ON)
+    shutdown_service()    
 
                                    
 def cb_battery(msg):
@@ -167,6 +182,10 @@ def cb_robot_closest_wp(wp: String):
     
 def cb_odom(odom: Odometry):
     v = abs(odom.twist.twist.linear.x)
+    if (rospy.get_param('/hrisim/robot_obs', False) and v >= 0.5):
+        dynobs_remove_service()
+        rospy.set_param('/hrisim/robot_obs', False)
+        dynobs_timer_service()
     
     
 if __name__ == "__main__":  
@@ -175,6 +194,8 @@ if __name__ == "__main__":
     NEXT_GOAL = None
     GO_TO_CHARGER = False
     QUEUE = []
+    rospy.set_param('/hrisim/robot_obs', False)
+
     
     p = PNPCmd()
     

@@ -84,7 +84,12 @@ windows:
   - name: visual
     tags: ['core']
     panes:
-      - 'roslaunch hrisim_gazebo simulation.launch gui:=$GAZEBO_GUI robot:=$TIAGO_TYPE public_sim:=true world:=$WORLD TIAGO_x:=$TIAGO_x TIAGO_y:=$TIAGO_y TIAGO_z:=$TIAGO_z TIAGO_R:=$TIAGO_R TIAGO_P:=$TIAGO_P TIAGO_Y:=$TIAGO_Y spawn_agent:=$SPAWN_AGENT spawn_teleop_agent:=$SPAWN_TELEOP_AGENT spawn_timeout:=$SPAWN_TIMEOUT'
+      - |
+        roslaunch hrisim_gazebo simulation.launch \
+        gui:=$GAZEBO_GUI robot:=$TIAGO_TYPE public_sim:=true \
+        world:=$WORLD TIAGO_x:=$TIAGO_x TIAGO_y:=$TIAGO_y TIAGO_z:=$TIAGO_z \
+        TIAGO_R:=$TIAGO_R TIAGO_P:=$TIAGO_P TIAGO_Y:=$TIAGO_Y \
+        spawn_agent:=$SPAWN_AGENT spawn_teleop_agent:=$SPAWN_TELEOP_AGENT spawn_timeout:=$SPAWN_TIMEOUT
       - 'rviz -d "$(rospack find hrisim_rviz)/config/rviz/hrisim_rviz.rviz" --fixed-frame map'
       - 'roscd hrisim_gazebo && ./physics_params.sh $MAX_STEP_SIZE $REAL_TIME_UPDATE_RATE'
       - 'rosrun hrisim_rviz overlay_visualiser.py'
@@ -96,19 +101,40 @@ windows:
   - name: robot-nav
     tags: ['robot']
     panes:
-      - 'roslaunch robot_nav_bringup robot_nav_bringup.launch public_sim:=true global_planner:=$GLOBAL_PLANNER local_planner:=$LOCAL_PLANNER localization:=$LOCALIZATION map:=$MAP'
+      - |
+        roslaunch robot_nav_bringup robot_nav_bringup.launch \
+        public_sim:=true global_planner:=$GLOBAL_PLANNER \
+        local_planner:=$LOCAL_PLANNER localization:=$LOCALIZATION map:=$MAP
   - name: robot-utils
     tags: ['robot']
     panes:
-      - 'roslaunch robot_battery sim_battery.launch init_battery:=$INIT_BATTERY static_duration:=$STATIC_DURATION dynamic_duration:=$DYNAMIC_DURATION charging_time:=$CHARGING_TIME'
+      - |
+        roslaunch robot_battery sim_battery.launch \
+        init_battery:=$INIT_BATTERY static_duration:=$STATIC_DURATION \
+        dynamic_duration:=$DYNAMIC_DURATION charging_time:=$CHARGING_TIME
       - 'rosrun robot_task TaskInfoManager.py'
+      - 'rosrun robot_obs DynamicObstacle.py'
   - name: planning
     tags: ['core']
     panes:
-      - 'roslaunch pnp_ros pnp_ros.launch plans_folder:=$PNP_PLANS actions_folder:=$PNP_ACTIONS conditions_folder:=$PNP_CONDITIONS'
+      - |
+        roslaunch pnp_ros pnp_ros.launch \
+        plans_folder:=$PNP_PLANS \
+        actions_folder:=$PNP_ACTIONS \
+        conditions_folder:=$PNP_CONDITIONS
       - 'rosparam set /hrisim/abort_time_threshold $ABORT_TIME_THRESHOLD'
-      # - 'rosparam set /hrisim/abort_time_threshold $ABORT_TIME_THRESHOLD && roscd hrisim_plans/scripts && python TIAGo_plan.py'
+      - |
+        rosparam set /hrisim/abort_time_threshold $ABORT_TIME_THRESHOLD && \
+        roscd hrisim_plans/scripts && \
+        python TIAGo_plan.py
   - name: pedsim
     tags: ['exp']
     panes:
-      - 'roslaunch peopleflow_bringup peopleflow_bringup.launch scenario:=$SCENARIO starting_elapsed:=$STARTING_ELAPSED allow_task:=$ALLOW_TASK max_tasktime:=$MAX_TASKTIME robot_mode:=$ROBOT_MODE max_human_speed:=$MAX_HUMAN_SPEED robot_radius:=$ROBOT_RADIUS is_stuck_threshold:=$IS_STUCK_THRESHOLD force_obstacle:=$FORCE_OBSTACLE sigma_obstacle:=$SIGMA_OBSTACLE force_social:=$FORCE_SOCIAL'
+      - |
+        roslaunch peopleflow_bringup peopleflow_bringup.launch \
+        scenario:=$SCENARIO starting_elapsed:=$STARTING_ELAPSED \
+        allow_task:=$ALLOW_TASK max_tasktime:=$MAX_TASKTIME \
+        robot_mode:=$ROBOT_MODE max_human_speed:=$MAX_HUMAN_SPEED \
+        robot_radius:=$ROBOT_RADIUS is_stuck_threshold:=$IS_STUCK_THRESHOLD \
+        force_obstacle:=$FORCE_OBSTACLE sigma_obstacle:=$SIGMA_OBSTACLE \
+        force_social:=$FORCE_SOCIAL
