@@ -11,7 +11,7 @@ except:
 
 import rospy
 from AbstractAction import AbstractAction
-from hrisim_prediction_srvs.srv import GetRiskMap, GetRiskMapResponse
+from hrisim_prediction_srvs.srv import GetRiskMap
 
 class predict(AbstractAction):
 

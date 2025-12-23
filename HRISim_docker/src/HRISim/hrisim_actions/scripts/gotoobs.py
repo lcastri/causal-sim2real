@@ -44,8 +44,7 @@ class gotoobs(AbstractAction):
 
             #! Dynamic obstacle spawning only if the next goal is not the last one
             if SPAWN_ENABLED:
-                if random.choices([True, False], [0.95, 0.05])[0]:
-                # if random.choices([True, False], [0.25, 0.75])[0]:
+                if random.choices([True, False], [0.25, 0.75])[0]:
                     dynobs_spawn_service = rospy.ServiceProxy('/hrisim/obstacles/spawn', Empty)
                     dynobs_spawn_service()
             
