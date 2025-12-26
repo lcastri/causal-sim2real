@@ -49,6 +49,10 @@ class RobotTaskManager():
         task.task_id = self.next_taskID
         task.path = req.path
         task.final_destination = task.path[-1]
+        task.tot_inf_time = req.tot_inf_time
+        task.mean_inf_time = req.mean_inf_time
+        task.planning_time = req.planning_time
+        task.evaluations = req.evaluations
         task.start_time = rospy.Time.now()
         task.result = 0
         self.tasks_msg.Tasks.append(task)

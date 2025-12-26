@@ -136,7 +136,8 @@ def Plan(p):
             rospy.logwarn(f"{QUEUE}")
             graph_path_show(','.join(QUEUE))
 
-            task_id = new_task_service(NEXT_GOAL, QUEUE).task_id
+            # task_id = new_task_service(NEXT_GOAL, QUEUE).task_id
+            task_id = new_task_service(NEXT_GOAL, QUEUE, 0, 0, 0, 0).task_id
 
         
         #! Here the goal is taken from the queue

@@ -79,6 +79,7 @@ init_cmd: |
   # CausalFlow arguments
   export_default CIE "CIE3.8"
   export_default PRED_STEP "5"
+  export_default INIT_TIME "H6"
 
 windows:
   - name: env
@@ -126,12 +127,12 @@ windows:
         plans_folder:=$PNP_PLANS \
         actions_folder:=$PNP_ACTIONS \
         conditions_folder:=$PNP_CONDITIONS
-      - 'rosparam set /hrisim/abort_time_threshold $ABORT_TIME_THRESHOLD'
       - |
         rosparam set /hrisim/abort_time_threshold $ABORT_TIME_THRESHOLD && \
         roscd hrisim_plans/scripts && \
-        python TIAGo_causal_plan.py
-        # python TIAGo_plan.py
+        python TIAGo_noncausal_plan.py --init_time=$INIT_TIME --init_battery=$INIT_BATTERY
+# python TIAGo_plan.py
+# python TIAGo_causal_plan.py --init_time=$INIT_TIME --init_battery=$INIT_BATTERY
   - name: pedsim
     tags: ['exp']
     panes:

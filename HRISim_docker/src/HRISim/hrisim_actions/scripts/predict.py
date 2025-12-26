@@ -11,7 +11,7 @@ except:
 
 import rospy
 from AbstractAction import AbstractAction
-from hrisim_prediction_srvs.srv import GetRiskMap
+from hrisim_prediction_srvs.srv import GetRiskMap, GetRiskMapResponse
 
 class predict(AbstractAction):
 
@@ -31,7 +31,10 @@ class predict(AbstractAction):
             rospy.set_param('/hrisim/risk_map', {
                 'arcs': response.arcs,
                 'PDs': response.PDs,
-                'BCs': response.BCs
+                'BCs': response.BCs,
+                'tot_inf_time': response.tot_inf_time,
+                'PD_inf_time': response.PD_inf_time,
+                'BC_inf_time': response.BC_inf_time
             })
             self.params.append("done")
         
