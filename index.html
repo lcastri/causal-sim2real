@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Causality-enhanced Decision-Making for Autonomous Mobile Robots in Dynamic Environments">
+  <meta property="og:title" content="Causality-enhanced Decision-Making for Autonomous Mobile Robots in Dynamic Environments"/>
+  <meta property="og:description" content="Causality-enhanced Decision-Making for Autonomous Mobile Robots in Dynamic Environments"/>
+  <meta property="og:url" content="https://lcastri.github.io/PeopleFlow/"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="Causality-enhanced Decision-Making for Autonomous Mobile Robots in Dynamic Environments">
+  <meta name="twitter:description" content="Causality-enhanced Decision-Making for Autonomous Mobile Robots in Dynamic Environments">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="causal robotics, causal infernece, human-robot interaction">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Causality-enhanced Decision-Making for Autonomous Mobile Robots in Dynamic Environments</title>
+  <link rel="icon" type="image/x-icon" href="static/images/icon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <img src="static/images/icon.png" alt="ROS-Causal" style="margin-bottom: 20px;">
+            <h1 class="title is-1 publication-title">Causality-enhanced Decision-Making for Autonomous Mobile Robots in Dynamic Environments</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="hero">
+  <div class="column has-text-centered">
+    <div class="is-size-5 publication-authors">
+      <!-- Paper authors -->
+      <span class="author-block">
+        <a href="https://lcastri.github.io/" target="_blank">Luca Castri</a><sup>1</sup>,
+      </span>
+      <span class="author-block">
+        <a href="https://www.istc.cnr.it/en/people/gloria-beraldo" target="_blank">Gloria Beraldo</a><sup>2,3</sup>,
+      </span>
+      <span class="author-block">
+        <a href="https://iaslab.dei.unipd.it/people/nbellotto/about/" target="_blank">Nicola Bellotto</a><sup>2,1</sup>
+      </span>
+    </div>
+
+    <div class="is-size-5 publication-authors">
+      <sup>1</sup>University of Lincoln, UK, 
+      <sup>2</sup>University of Padua, Italy, 
+      <sup>3</sup>National Research Council of Italy<br>
+      Preprint
+    </div>
+    <div class="column has-text-centered">
+      <div class="publication-links">
+        <!-- ArXiv abstract Link -->
+        <span class="link-block">
+          <a href="https://arxiv.org/abs/2504.11901" target="_blank" class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+              <i class="ai ai-arxiv"></i>
+            </span>
+            <span>arXiv</span>
+          </a>
+        </span>
+        <!-- PDF link -->
+        <span class="link-block">
+          <a href="https://arxiv.org/pdf/2504.11901" target="_blank" class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+              <i class="fas fa-file-pdf"></i>
+            </span>
+            <span>Paper</span>
+          </a>
+        </span>
+        <!-- PeopleFlow Github link -->
+        <span class="link-block">
+          <a href="https://github.com/lcastri/PeopleFlow" target="_blank" class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+            <span>PeopleFlow</span>
+          </a>
+        </span>
+      </div>
+    </div>            
+  </div>
+</section>
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/causal-inference-approach.png" alt="Causal Decision-Making Framework" style="width: 100%;">
+    </div>
+  </div>
+</section> -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The growing integration of robots in shared environments—such as warehouses, shopping centres, and hospitals—demands a deep understanding of the underlying dynamics and human behaviours, 
+            including how, when, and where individuals engage in various activities and interactions. This knowledge goes beyond simple correlation studies and requires a more comprehensive causal analysis.
+            By leveraging causal inference to model cause-and-effect relationships, we can better anticipate critical environmental factors and enable autonomous robots to plan and execute tasks more effectively.
+            To this end, we propose a novel causality-based decision-making framework that reasons over a learned causal model to predict battery usage and human obstructions, understanding how these factors
+            could influence robot task execution. Such reasoning framework assists the robot in deciding when and how to complete a given task. 
+            To achieve this, we developed also PeopleFlow, a new Gazebo based simulator designed to model context-sensitive human-robot spatial interactions in shared workspaces. 
+            PeopleFlow features realistic human and robot trajectories influenced by contextual factors such as time, environment layout, and robot state, and can simulate a large number of agents. 
+            While the simulator is general-purpose, in this paper we focus on a warehouse-like environment as a case study, where we conduct an extensive evaluation benchmarking our causal approach against a
+            non-causal baseline. Our findings demonstrate the efficacy of the proposed solutions, highlighting how causal reasoning enables autonomous robots to operate more efficiently and safely in dynamic
+            environments shared with humans.</p>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <div class="columns">
+            <div class="column is-half">
+              <div class="content has-text-justified">
+                <h2 class="title is-3">Idea <img src="static/images/light-bulb.png" alt="Lightbulb icon" style="height: 35px;"></h2>
+                <p>
+                  Imagine a mobile robot in a busy warehouse. To get its job done efficiently, it cannot just react to people—it needs to anticipate them. 
+                  <br><br>
+                  To go beyond simple obstacle avoidance, our system learns from cause and effect. It considers 
+                  context (e.g., time of day and room layout) to anticipate human patterns and act more intelligently.
+                  <br><br>                  
+                  Here, the robot has a target. It knows two routes: the direct but busy <span style="color: red; font-weight: bold;">red path</span> and the longer <span style="color: blue; font-weight: bold;">blue path</span> through the canteen.
+                  Using its causal knowledge, the robot reasons that since it is not lunchtime, the canteen will be empty and correctly chooses the <span style="color: blue; font-weight: bold;">blue path</span> to avoid collisions and delays.
+                  <br><br>
+                  <span style="font-weight: bold;">&#10145; Enhanced human safety and robot efficiency</span>
+                </p>
+              </div>
+            </div>
+            <div class="column is-half">
+              <img src="static/images/intro.png" alt="Example" style="max-width: 100%; height: auto;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Causality-based Robot Decision Making Framework</h2>
+        <div class="content has-text-justified">
+          <p>
+            <img src="static/images/causal-inference-approach.png" alt="Causal Decision-Making Framework" style="width: 100%;">
+          </p>
+          <h2 class="title is-5">Data Extraction Pipeline</h2>
+          <p>
+            The data extraction pipeline continuously gathers information about the robot, humans, and contextual factors from the environment. 
+            The collected data is then preprocessed through subsampling to manage volume and discretisation to prepare it for the learning 
+            and inference components. For real-time inference, data is processed and used directly without being stored.          
+          </p>
+          <h2 class="title is-5">Learning Pipeline</h2>
+          <p>
+            The learning pipeline is responsible for discovering the underlying causal relationships from the processed data and then 
+            learning the parameters of the model. It uses a causal discovery method, such as J-PCMCI+
+            (from <img src="static/images/causalflow-icon-color.png" alt="CausalFlow icon" style="height: 23px; vertical-align: middle;"> 
+            <a href="https://github.com/lcastri/causalflow" target="_blank" class="mylink">CausalFlow</a>), 
+            to identify the causal structure from time-series data containing contextual variables and a 
+            Maximum Likelihood Estimation (MLE) to estimate the conditional probability distributions 
+            for each node in the discovered causal graph.
+          </p>
+          <h2 class="title is-5">Inference Pipeline</h2>
+          <p>
+            The inference pipeline enables the robot to make decisions by using the learned causal model to evaluate its actions. 
+            When assigned a task, the robot formulates a query as a causal intervention, such as, 
+            <i>"What if I go to the delivery point now at velocity v?"</i>. The pipeline then estimates the expected outcomes, 
+            specifically the battery consumption and people density. These estimates are incorporated into a heuristic that guides the 
+            A* algorithm to find an optimal path and decide whether to execute or abort the task.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">PeopleFlow</h2>
+        <div class="content has-text-justified">
+          <img src="static/images/simulator-approach.png" alt="PeopleFlow Approach" style="max-width: 100%; height: auto;">
+          <p>
+            PeopleFlow is a novel, Gazebo-based simulator designed to create realistic and repeatable scenarios of human-robot spatial interactions (HRSI). 
+            Its key feature is the ability to model <b>context-sensitive behaviours</b>, where factors like the time of day dynamically influence the goals and 
+            interaction patterns of both humans and robots. It includes a <a href="https://pal-robotics.com/robot/tiago/" target="_blank" class="mylink">TIAGo robot</a>
+            and can simulate a large number of human agents.
+          </p>
+          <p>
+            The simulator's architecture is built on ROS and Gazebo, using the <a href="https://github.com/srl-freiburg/pedsim_ros" target="_blank" class="mylink">pedsim_ros</a> library to model human movement based on a social force model. 
+            Its novelty lies in two new ROS nodes: the <b>Context Manager</b>, which governs scenario-specific factors like time, and the <b>Context-Pedsim Bridge</b>, 
+            which generates tasks and navigation plans for agents based on the current context.
+          </p>
+        </div>
+        <div class="columns">
+          <div class="column is-half">
+            <img src="static/images/simulator-example-rviz.png" alt="RViz" style="max-width: 100%; height: auto;">
+          </div>
+          <div class="column is-half">
+            <img src="static/images/simulator-example-gazebo.png" alt="Gazebo" style="max-width: 100%; height: auto;">
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column is-half">
+            <p>
+              <b>Case study:</b> warehouse-like environment.<br><br>
+              This simulated space consists of a working area, a canteen, offices, 
+              toilets, and a corridor connecting them. human congestion and robot tasks 
+              change based on the time of day, creating realistic, context-sensitive
+              challenges for the robot's navigation.
+            </p>
+          </div>
+          <div class="column is-half">
+            <img src="static/images/simulator-scenario.png" alt="Warehouse-like environment" style="max-width: 100%; height: auto;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Causality-based Robot Decision Making in PeopleFlow</h2>
+        <div class="content has-text-justified">
+          <div class="columns">
+            <div class="column is-half">
+              <h2 class="title is-5">Causal Inference</h2>
+              <p>
+                To complete its tasks, the robot first queries our framework by asking "what-if" questions, like
+                <i>"What if I go to the delivery point now at velocity v?"</i>. 
+                This allows it to estimate critical factors like <b>battery consumption (L)</b> and <b>density of people (D)</b> 
+                in different areas of the environment.
+              </p>
+              <h2 class="title is-5">Heuristic</h2>
+              <p>
+               The robot uses a custom heuristic to find the best path. 
+               By considering the estimated battery cost and crowd density for a route, this guide allows the robot to prioritise
+               <b>safety</b> and <b>efficiency</b> over simply minimising travel distance
+              </p>
+            </div>
+            <div class="column is-half">
+              <p>
+                <img src="static/images/hypothetical-causal-model.png" alt="Causal Decision-Making Framework" style="width: 94%;">
+              </p>
+            </div>
+          </div>
+          <h2 class="title is-5">Decision Making</h2>
+          <p>
+            The framework also makes a crucial <b>go/no-go</b> decision. 
+            It checks if a task can be completed without the battery falling below a critical threshold. 
+            If not, the task is aborted to prevent failure.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <!-- Your video here -->
+        <source src="static/videos/causal-inference-video.mp4"
+        type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Simulation Experiments</h2>
+        <div class="content has-text-justified">
+          <p>
+            <img src="static/images/exp-scenario.png" alt="Simulation Experiments" style="width: 100%;">
+          </p>
+          <div class="columns">
+            <div class="column is-half">
+              <p>
+                The framework's performance was evaluated in a simualed warehouse-like environment modelling a typical
+                warehouse day shift, which was divided into 11 distinct scenarios.
+                Each scenario featured unique worker congestion patterns corresponding to different times of day. 
+                <br><br>
+                The causality-based approach was then benchmarked against a baseline navigation method 
+                that relies on a shortest-path heuristic.
+              </p>
+            </div>
+            <div class="column is-half">
+              <video poster="" id="tree" autoplay controls muted loop height="100%">
+                <source src="static/videos/peopleflow-2025-04-14_17.09.17.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column is-half">
+              <h2 class="title is-5">Causal Discovery</h2>
+              <p>
+                Data was collected from the 11 scenarios simulated in PeopleFlow 
+                and fed into the framework's learning pipeline. This process had two main steps: 
+                first, to reconstruct the underlying causal model, and second, to learn the 
+                conditional probability distributions for each node in the discovered causal graph.
+                <br><br>
+                <b>Note:</b> This causal model was used for both the simulation and real-world experiments.
+              </p>
+            </div>
+            <div class="column is-half">
+              <img src="static/images/exp-cm.png" alt="Simulation Experiments" style="width: 100%;">
+            </div>
+          </div>
+          <h2 class="title is-5">Non-causal vs Causal</h2>
+          <img src="static/images/non-causal vs causal.png" alt="non-causal-vs-causal" style="max-width: 100%; height: auto;">
+          <p>
+            Here are two examples extracted from the non-causal vs. causal comparison. 
+            The <span style="color: blue; font-weight: bold;">blue line</span> represents the path chosen by the robot to reach the target position (<span style="color: #07f307; font-weight: bold;">green sphere</span>).
+            The non-causal approach always chooses the shortest path regardless of congested areas. 
+            In contrast, the causal approach chooses paths that prioritise human safety and robot task efficiency over travelled distance.  
+          </p>
+          <h2 class="title is-5">Efficiency 🚀</h2>
+          <p>
+            The results show a dramatic improvement in task efficiency.<br>
+            By anticipating and avoiding congested areas, our causal approach enabled the robot to successfully complete <b>89%</b> of
+            its tasks, compared to only 55.9% for the baseline. This intelligence also led to a significant reduction in wasted time
+            and battery power. While the baseline approach wasted nearly 40% of its battery on failed tasks, our method used over <b>92%</b>
+            of its battery effectively on tasks that were successfully completed.
+          </p>
+          <div class="columns">
+            <div class="column is-half">
+              <img src="static/images/exp-efficiency-success-failure-1.png" alt="Success" style="max-width: 100%; height: auto;">
+              <img src="static/images/exp-efficiency-task-time-1.png" alt="TaskTime" style="max-width: 100%; height: auto;">
+            </div>
+            <div class="column is-half">
+              <img src="static/images/exp-efficiency-travelled-distance-1.png" alt="Distance" style="max-width: 100%; height: auto;">
+              <img src="static/images/exp-efficiency-battery-usage-1.png" alt="Battery" style="max-width: 100%; height: auto;">
+            </div>
+          </div>
+          <h2 class="title is-5">Safety ⚠️</h2>
+          <p>
+            Our framework significantly enhances human safety in the shared human-robot environment.<br>
+            The baseline approach, which often chose the shortest but busiest paths, resulted in 182 collisions with humans. 
+            In contrast, our causality-aware robot was involved in <b>only 27 collisions</b>. Furthermore, our approach ensures 
+            the robot maintains a safer distance from people.
+          </p>
+          <div class="columns">
+            <div class="column is-half">
+              <img src="static/images/exp-safety-dangerous-interaction-1.png" alt="Collision" style="max-width: 100%; height: auto;">
+            </div>
+            <div class="column is-half">
+              <img src="static/images/exp-safety-proxemics.png" alt="Proxemics" style="max-width: 100%; height: auto;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Real-World Experiments</h2>
+        <div class="content">
+          The framework was also evaluated in a real-world setting at the University of Lincoln (UK). 
+          Two scenarios were staged to qualitatively test the effectiveness of our approach when deployed
+          on a real <a href="https://pal-robotics.com/robot/tiago/" target="_blank" class="mylink">TIAGo robot</a>: 
+          a busy <span style="color: #ec7a1b82; font-weight: bold;">poster session in a corridor</span> and a <span style="color: #ec1b8282; font-weight: bold;">social event in a kitchen</span>.
+          <br><br><b>Fifteen participants</b> took part in the data collection for the learning pipeline of our causal framework.<br><br>
+          <img src="static/images/INB-3floor-map-coloured.png" alt="INB-3floor-map" style="max-width: 100%; height: auto;">
+          <h2 class="title is-5">Scenario 1: Poster Session</h2>
+          <h2 class="title is-6">Learning</h2>
+          <div class="columns">
+            <div class="column is-half">
+              <img src="static/images/S1-learning-blurred.jpg" alt="S1-learning" style="max-width: 100%; height: auto;">
+            </div>
+            <div class="column is-half">
+              <video poster="" id="tree" autoplay controls muted loop height="100%">
+                <source src="static/videos/S1-learning-screen.mp4" type="video/mp4">
+              </video>           
+            </div>  
+          </div>
+          <p>
+            By exploiting the causal model from the simulation experiments 
+            (specifically the W &longrightarrow; D &longleftarrow; S relationship), 
+            data was collected from the 
+            <span style="color: #ec7a1b82; font-weight: bold;">poster session scenario</span>. 
+            This was used to learn the new conditional probability distributions for each node in the causal graph.
+          </p>  
+          <img src="static/images/S1-map.png" alt="S1-map" style="max-width: 100%; height: auto;">
+          <p>
+            The map shows the waypoints in the corridor where the poster session took place. This area had 
+            a higher people density compared to the other waypoints in the environment.
+          </p>
+          
+          
+          <h2 class="title is-6">Inference</h2>
+          <div class="has-text-centered">
+            <p>
+              <b>Robot Task:</b> Navigate from the starting <span style="color: #ff00ffff; font-weight: bold;">pink waypoint</span> to the target <span style="color: #07f307; font-weight: bold;">green waypoint</span>.
+            </p>
+            <img src="static/images/S1-task.png" alt="S1-task" style="max-width: 100%; height: auto;">
+          </div>
+          <br>
+          <div class="columns">
+            <div class="column is-half">
+              <div class="has-text-centered">
+                <b>Non-causal approach (baseline)</b>
+                <video poster="" id="tree" autoplay controls muted loop height="100%">
+                  <source src="static/videos/S1-inference-noncausal-screen.mp4" type="video/mp4">
+                </video>           
+                <video poster="" id="tree" autoplay controls loop height="100%">
+                  <source src="static/videos/S1-inference-noncausal-blurred.mp4" type="video/mp4">
+                </video>           
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="has-text-centered">
+                <b>Causal approach (Our)</b>
+                <video poster="" id="tree" autoplay controls muted loop height="100%">
+                  <source src="static/videos/S1-inference-causal-screen.mp4" type="video/mp4">
+                </video>           
+                <video poster="" id="tree" autoplay controls loop height="100%">
+                  <source src="static/videos/S1-inference-causal-blurred.mp4" type="video/mp4">
+                </video>                      
+              </div>  
+            </div>  
+          </div>
+          <p>
+            The non-causal approach uses an A* algorithm with a shortest-path heuristic. 
+            This directs the robot straight into the crowded corridor where the poster session is taking place. 
+            As a result, the robot cannot find enough space to navigate and ultimately fails the task.
+            <br><br> 
+            In contrast, our causal approach leverages its knowledge of the relationship between the contextual factor <b>time of day (S) = "poster session"</b>
+            and the resulting <b>people density (D)</b>. It correctly identifies the corridor as a congested area and chooses a longer but clearer path. 
+            This alternative route is ultimately <b>more efficient</b>, as the robot can complete its task, and <b>safer</b> for the people at the poster session.
+          </p>
+          
+          
+          <h2 class="title is-5">Scenario 2: Social Event</h2>
+          <h2 class="title is-6">Learning</h2>
+          <div class="columns">
+            <div class="column is-half">
+              <img src="static/images/S2-learning-blurred.jpg" alt="S1-learning" style="max-width: 100%; height: auto;">
+            </div>
+            <div class="column is-half">
+              <video poster="" id="tree" autoplay controls muted loop height="100%">
+                <source src="static/videos/S2-learning-screen.mp4" type="video/mp4">
+              </video>           
+            </div>
+          </div>
+          <p>
+            Similarly, for the <span style="color: #ec1b8282; font-weight: bold;">social event scenario</span>, 
+            data was collected using the same causal model (the W &longrightarrow; D &longleftarrow; S relationship). 
+            The goal was to again update the model's parameters, this time with data from a different real-world interaction.
+          </p>  
+          <img src="static/images/S2-map.png" alt="S2-map" style="max-width: 100%; height: auto;">
+          <p>
+            The corresponding map displays the kitchen waypoint where the event was held. As expected, 
+            this location shows a higher concentration of people than the other areas in the environment.
+          </p>
+          <h2 class="title is-6">Inference</h2>
+          <div class="has-text-centered">
+            <p>
+              <b>Robot Task:</b> Navigate from the starting <span style="color: #ff00ffff; font-weight: bold;">pink waypoint</span> to the target <span style="color: #07f307; font-weight: bold;">green waypoint</span>.
+            </p>
+            <img src="static/images/S2-task.png" alt="S2-task" style="max-width: 100%; height: auto;">
+          </div>
+          <br>
+          <div class="columns">
+            <div class="column is-half">
+              <div class="has-text-centered">
+                <b>Non-causal approach (baseline)</b>
+                <video poster="" id="tree" autoplay controls muted loop height="100%">
+                  <source src="static/videos/S2-inference-noncausal-screen.mp4" type="video/mp4">
+                </video>           
+                <video poster="" id="tree" autoplay controls loop height="100%">
+                  <source src="static/videos/S2-inference-noncausal-blurred.mp4" type="video/mp4">
+                </video>           
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="has-text-centered">
+                <b>Causal approach (Our)</b>
+                <video poster="" id="tree" autoplay controls muted loop height="100%">
+                  <source src="static/videos/S2-inference-causal-screen.mp4" type="video/mp4">
+                </video>           
+                <video poster="" id="tree" autoplay controls loop height="100%">
+                  <source src="static/videos/S2-inference-causal-blurred.mp4" type="video/mp4">
+                </video>                      
+              </div>  
+            </div>  
+          </div>
+          <p>
+            Without causal reasoning, the baseline approach again fails. It attempts to take the shortest path directly through the kitchen, 
+            where the crowd from the social event obstructs its route and causes the task to fail.
+            <br><br> 
+            The causal approach, however, correctly predicts that a <b>"social event"</b> time slot will lead to high <b>people density (D)</b> 
+            in the kitchen. By knowing this, it chooses an alternative route that bypasses the congestion. While physically longer, 
+            this path is ultimately <b>safer</b> for the people at the event and <b>more efficient</b>, ensuring the robot 
+            successfully completes its task.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--BibTex citation + info -->
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX and useful links</h2>
+      <h2 class="title is-5 publication-title">
+        Causality-enhanced Decision-Making for Autonomous Mobile Robots in Dynamic Environments
+      </h2>
+      <div class="column has-text-centered">
+        <div class="publication-links">
+          <!-- ArXiv abstract Link -->
+          <span class="link-block">
+            <a href="https://arxiv.org/abs/2504.11901" target="_blank" class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="ai ai-arxiv"></i>
+              </span>
+              <span>arXiv</span>
+            </a>
+          </span>
+          <!-- PDF link -->
+          <span class="link-block">
+            <a href="https://arxiv.org/pdf/2504.11901" target="_blank" class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fas fa-file-pdf"></i>
+              </span>
+              <span>Paper</span>
+            </a>
+          </span>
+          <!-- PeopleFlow Github link -->
+          <span class="link-block">
+            <a href="https://github.com/lcastri/PeopleFlow" target="_blank" class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+              <span>PeopleFlow</span>
+            </a>
+          </span>
+        </div>
+      </div>                
+      <pre><code>@article{castri2025causality,
+        title={Causality-enhanced Decision-Making for Autonomous Mobile Robots in Dynamic Environments},
+        author={Castri, Luca and Beraldo, Gloria and Bellotto, Nicola},
+        journal={arXiv preprint arXiv:2504.11901},
+        year={2025}
+      }
+      </code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
