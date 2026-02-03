@@ -1,47 +1,84 @@
-# Academic Project Page Template
-This is an academic paper project page template.
 
+## Real-World Experiments
 
-Example project pages built using this template are:
-- https://vision.huji.ac.il/spectral_detuning/
-- https://dreamix-video-editing.github.io
-- https://vision.huji.ac.il/conffusion/
-- https://vision.huji.ac.il/3d_ads/
-- https://vision.huji.ac.il/ssrl_ad/
-- https://vision.huji.ac.il/deepsim/
+The framework was also evaluated in a real-world setting at the University of Lincoln (UK). Two scenarios were staged to qualitatively test the effectiveness of our approach when deployed on a real TIAGo robot: a busy <strong>poster session in a corridor</strong> and a <strong>social event in a kitchen</strong>.
 
+Fifteen participants took part in the data collection for the learning pipeline of our causal framework.
 
+![INB map](static/images/INB-3floor-map-coloured.png)
 
-## Start using the template
-To start using the template click on `Use this Template`.
+### Scenario 1: Poster Session
 
-The template uses html for controlling the content and css for controlling the style. 
-To edit the websites contents edit the `index.html` file. It contains different HTML "building blocks", use whichever ones you need and comment out the rest.  
+#### Learning
 
-**IMPORTANT!** Make sure to replace the `favicon.ico` under `static/images/` with one of your own, otherwise your favicon is going to be a dreambooth image of me.
+<video controls width="640">
+	<source src="static/videos/S1-learning-screen.mp4" type="video/mp4">
+	Your browser does not support the video tag.
+</video>
 
-## Components
-- Teaser video
-- Images Carousel
-- Youtube embedding
-- Video Carousel
-- PDF Poster
-- Bibtex citation
+The data collected during the poster session was used to update the conditional probability distributions of the causal model (W → D ← S). The corridor waypoints used in the experiment had higher people density than other areas.
 
-## Tips:
-- The `index.html` file contains comments instructing you what to replace, you should follow these comments.
-- The `meta` tags in the `index.html` file are used to provide metadata about your paper 
-(e.g. helping search engine index the website, showing a preview image when sharing the website, etc.)
-- The resolution of images and videos can usually be around 1920-2048, there rarely a need for better resolution that take longer to load. 
-- All the images and videos you use should be compressed to allow for fast loading of the website (and thus better indexing by search engines). For images, you can use [TinyPNG](https://tinypng.com), for videos you can need to find the tradeoff between size and quality.
-- When using large video files (larger than 10MB), it's better to use youtube for hosting the video as serving the video from the website can take time.
-- Using a tracker can help you analyze the traffic and see where users came from. [statcounter](https://statcounter.com) is a free, easy to use tracker that takes under 5 minutes to set up. 
-- This project page can also be made into a github pages website.
-- Replace the favicon to one of your choosing (the default one is of the Hebrew University). 
-- Suggestions, improvements and comments are welcome, simply open an issue or contact me. You can find my contact information at [https://pages.cs.huji.ac.il/eliahu-horwitz/](https://pages.cs.huji.ac.il/eliahu-horwitz/)
+![S1 map](static/images/S1-map.png)
 
-## Acknowledgments
-Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
+#### Inference
 
-## Website License
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+Robot Task: Navigate from the starting pink waypoint to the target green waypoint.
+
+<table>
+	<tr>
+		<td style="vertical-align: top; padding-right: 12px;">
+			<p><strong>Non-causal approach (baseline)</strong></p>
+			<video controls style="max-width:100%; height:auto;">
+				<source src="static/videos/S1-inference-noncausal-screen.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+		</td>
+		<td style="vertical-align: top; padding-left: 12px;">
+			<p><strong>Causal approach (Our)</strong></p>
+			<video controls style="max-width:100%; height:auto;">
+				<source src="static/videos/S1-inference-causal-screen.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+		</td>
+	</tr>
+</table>
+
+The causal approach correctly identified the corridor as congested and chose a longer but clearer path, improving task success and safety.
+
+### Scenario 2: Social Event
+
+#### Learning
+
+<video controls width="640">
+	<source src="static/videos/S2-learning-screen.mp4" type="video/mp4">
+	Your browser does not support the video tag.
+</video>
+
+Data from the social event (kitchen) was used to further update the model. The kitchen waypoint showed a higher concentration of people.
+
+![S2 map](static/images/S2-map.png)
+
+#### Inference
+
+Robot Task: Navigate from the starting pink waypoint to the target green waypoint.
+
+<table>
+	<tr>
+		<td style="vertical-align: top; padding-right: 12px;">
+			<p><strong>Non-causal approach (baseline)</strong></p>
+			<video controls style="max-width:100%; height:auto;">
+				<source src="static/videos/S2-inference-noncausal-screen.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+		</td>
+		<td style="vertical-align: top; padding-left: 12px;">
+			<p><strong>Causal approach (Our)</strong></p>
+			<video controls style="max-width:100%; height:auto;">
+				<source src="static/videos/S2-inference-causal-screen.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+		</td>
+	</tr>
+</table>
+
+Without causal reasoning the baseline attempts the shortest path through the crowded kitchen and often fails. The causal approach predicts the high people density and chooses a safer, more efficient alternative route.
