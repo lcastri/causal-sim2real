@@ -28,17 +28,11 @@ Robot Task: Navigate from the starting pink waypoint to the target green waypoin
 	<tr>
 		<td style="vertical-align: top; padding-right: 12px;">
 			<p><strong>Non-causal approach (baseline)</strong></p>
-			<video controls style="max-width:100%; height:auto;">
-				<source src="static/videos/S1-inference-noncausal-screen.mp4" type="video/mp4">
-				Your browser does not support the video tag.
-			</video>
+			<img src="static/gifs/S1-inference-noncausal-screen.gif" alt="S1 non-causal" style="max-width:100%; height:auto;">
 		</td>
 		<td style="vertical-align: top; padding-left: 12px;">
 			<p><strong>Causal approach (Our)</strong></p>
-			<video controls style="max-width:100%; height:auto;">
-				<source src="static/videos/S1-inference-causal-screen.mp4" type="video/mp4">
-				Your browser does not support the video tag.
-			</video>
+			<img src="static/gifs/S1-inference-causal-screen.gif" alt="S1 causal" style="max-width:100%; height:auto;">
 		</td>
 	</tr>
 </table>
@@ -66,17 +60,11 @@ Robot Task: Navigate from the starting pink waypoint to the target green waypoin
 	<tr>
 		<td style="vertical-align: top; padding-right: 12px;">
 			<p><strong>Non-causal approach (baseline)</strong></p>
-			<video controls style="max-width:100%; height:auto;">
-				<source src="static/videos/S2-inference-noncausal-screen.mp4" type="video/mp4">
-				Your browser does not support the video tag.
-			</video>
+			<img src="static/gifs/S2-inference-noncausal-screen.gif" alt="S2 non-causal" style="max-width:100%; height:auto;">
 		</td>
 		<td style="vertical-align: top; padding-left: 12px;">
 			<p><strong>Causal approach (Our)</strong></p>
-			<video controls style="max-width:100%; height:auto;">
-				<source src="static/videos/S2-inference-causal-screen.mp4" type="video/mp4">
-				Your browser does not support the video tag.
-			</video>
+			<img src="static/gifs/S2-inference-causal-screen.gif" alt="S2 causal" style="max-width:100%; height:auto;">
 		</td>
 	</tr>
 </table>
