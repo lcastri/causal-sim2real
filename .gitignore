@@ -368,3 +368,4 @@ dist/
 /HRISim_docker
 
 *.vscode
+/scripts/*
