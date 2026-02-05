@@ -1,9 +1,9 @@
 
 ## Real-World Experiments
 
-The framework was also evaluated in a real-world setting at the University of Lincoln (UK). Two scenarios were staged to qualitatively test the effectiveness of our approach when deployed on a real TIAGo robot: a busy <strong>poster session in a corridor</strong> and a <strong>social event in a kitchen</strong>.
+The framework was also evaluated in a real-world university setting. Two scenarios were staged to qualitatively test the effectiveness of our approach when deployed on a real TIAGo robot: a busy <strong>poster session in a corridor</strong> and a <strong>social event in a kitchen</strong>.
 
-Fifteen participants took part in the data collection for the learning pipeline of our causal framework.
+Twenty participants took part in the data collection for the learning pipeline of our causal framework.
 
 ![INB map](static/images/INB-3floor-map-coloured.png)
 
