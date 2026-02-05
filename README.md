@@ -5,7 +5,7 @@ The framework was also evaluated in a real-world university setting. Two scenari
 
 Twenty participants took part in the data collection for the learning pipeline of our causal framework.
 
-![INB map](static/images/INB-3floor-map-coloured.png)
+![INB map](https://github.com/lcastri/causal-sim2real/blob/static/images/INB-3floor-map-coloured.png)
 
 ### Scenario 1: Poster Session
 
